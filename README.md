@@ -124,7 +124,6 @@ spring.datasource.password=mot_de_passe
 
   ###### Paramètre JSON Body - Exemple :
 
-      ```json
       {
          "mail": "admin@example.com",
          "password": "admin123"
@@ -170,7 +169,6 @@ spring.datasource.password=mot_de_passe
 
   ###### Paramètre JSON Body - Exemple :
 
-      ```json
       {
          "nomProduit": "Table en bois",
          "descriptionProduit": "Une table artisanale fabriquée à la main.",
