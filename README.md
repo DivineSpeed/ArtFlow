@@ -1,4 +1,5 @@
-# ArtFlow 
+# ArtFlow ![artflow_logo_resized](https://github.com/user-attachments/assets/171f1e4b-53c7-45e7-a097-46b52edcfd51)
+
 
 
 **ArtFlow** est une application web full-stack conçue pour fournir une plateforme de e-commerce où les artistes indépendants peuvent exposer et vendre leurs œuvres. Le projet se compose de deux parties principales : le backend, développé avec Spring Boot, et le frontend, développé avec Angular. La plateforme permet des interactions fluides entre les artistes et les acheteurs, facilitant les transactions et la gestion des œuvres.
