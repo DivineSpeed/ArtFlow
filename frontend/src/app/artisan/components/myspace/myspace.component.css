@@ -54,6 +54,7 @@
 }
 
 
+
 .body {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  
@@ -121,9 +122,11 @@
     transition: all 0.3s ease;
     border-radius: 8px;
     width: 95%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }

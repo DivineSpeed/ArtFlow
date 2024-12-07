@@ -1,6 +1,5 @@
 package com.example.ArtFloow.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -23,7 +22,6 @@ public class Panier {
         private LocalDateTime dateCreation = LocalDateTime.now();  // Date de création du panier
 
         @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL, orphanRemoval = true)
-        
         private List<PanierItem> items = new ArrayList<>();  // Liste des articles dans le panier
 
         // Getters and setters

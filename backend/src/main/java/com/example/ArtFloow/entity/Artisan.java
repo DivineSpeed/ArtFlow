@@ -24,6 +24,9 @@ public class Artisan {
     @JoinColumn(name = "idCompte", referencedColumnName = "idCompte", nullable = false)
     private Compte compte;
 
+    public Artisan() {
+    }
+
     // Getters et setters
     public Long getIdArtisan() {
         return idArtisan;

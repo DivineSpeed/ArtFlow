@@ -21,6 +21,7 @@ import { ProductService } from '../../../products/services/product.service';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
+
 export class DashboardComponent implements OnInit {
   data: any;
   verif = 0;
