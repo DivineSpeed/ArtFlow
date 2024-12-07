@@ -1,40 +1,135 @@
+.table-responsive {
+  max-height: 70vh; /* Limit vertical height with scroll */
+  overflow-y: auto; /* Vertical scroll for overflow content */
+  overflow-x: auto; /* Enable horizontal scroll for wide tables */
+}
+
+mat-table {
+  min-width: 100%; /* Ensure the table stretches to accommodate all columns */
+}
+
+.mat-header-cell, .mat-cell {
+  white-space: nowrap; /* Prevent text wrapping in cells */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  overflow: hidden; /* Hide overflow */
+  max-width: 200px; /* Optional: Adjust as needed for column width */
+}
+
+.mat-cell:hover, .mat-header-cell:hover {
+  white-space: normal; /* Show full text on hover */
+  overflow: visible; /* Prevent hiding overflow text */
+  position: relative; /* Keep the cell in flow */
+  z-index: 10; /* Ensure visibility above other content */
+  background-color: rgba(0, 0, 0, 0.05); /* Highlight on hover */
+}
+
 .table .form-select {
-    width: 150px;
-  }
-  
-  
-  .chart-container {
-    position: relative;
-    height: 400px;
-  }
-  
-  .card-header {
-    background-color: #3f51b5;
-    color: white;
-    font-size: 18px;
-  }
-  
-  .mat-raised-button {
-    margin-right: 10px;
-  }
-  .status-select {
-    width: 150px; /* Adjust based on your design */
-  }
-  
-  .mat-select-value {
-    color: inherit; /* Allows dynamic text color */
-  }
-  
-  .text-success {
-    color: green !important;
-  }
-  
-  .text-warning {
-    color: orange !important;
-  }
-  
-  .text-danger {
-    color: red !important;
-    
-  }
-  
+  width: 150px;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%; /* Ensure responsive width */
+}
+
+.card-header {
+  background-color: #3f51b5;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mat-raised-button {
+  margin-right: 10px;
+}
+
+.status-select {
+  width: 150px;
+}
+
+.mat-select-value {
+  color: inherit;
+}
+
+.text-success {
+  color: green !important;
+}
+
+.text-warning {
+  color: orange !important;
+}
+
+.text-danger {
+  color: red !important;
+}
+
+.product-image {
+  width: 100%; /* Makes the image fully responsive */
+  max-width: 70px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.custom-card {
+  border: 1px solid #ddd; /* Light border for the card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  background-color: #fff;
+  height: 100%;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.card-img-top {
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+.card-body {
+  padding: 10px;
+  text-align: center; /* Center text */
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card {
+  height: 300px; /* Allow the card height to adjust dynamically */
+  max-height: 300px; /* Optional: limit max height */
+}
+
+.no-commands-message {
+  text-align: center;
+  color: #f44336;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.email {
+  word-break: break-word; /* Break long email strings to prevent overflow */
+}
+.title {
+  color: rgb(43, 43, 43);
+  font-size: 15px;
+  word-break: break-word;
+  font-weight: bold; /* Makes the title bold */
+}
+.chart{
+  height: 400px;
+}
