@@ -181,21 +181,18 @@ spring.datasource.password=mot_de_passe
 
     ###### Paramètre JSON Body - Exemple :
 
+    ```json
     {
-    {
-    "userId": 16,
-    "nomArtisan": "Doe",
-    "prenomArtisan": "John",
-    "numTelephone": "+21612345678",
-    "boutique":
-    {
-    "nomBoutique": "Artisan Créations",
-    "description": "Création d'objets artisanaux faits main.",
-    "adresseBoutique": "123 Rue des Artisans, Tunis",
-    "facebookLink": "https://facebook.com/ArtisanCreations",
-    "instagramLink": "https://instagram.com/ArtisanCreations"
+      "userId": 16,
+      "nomArtisan": "Doe",
+      "prenomArtisan": "John",
+      "numTelephone": "+21612345678",
+      "nomBoutique": "Artisan Créations",
+      "description": "Création d'objets artisanaux faits main.",
+      "adresseBoutique": "123 Rue des Artisans, Tunis",
+      "facebookLink": "https://facebook.com/ArtisanCreations",
+      "instagramLink": "https://instagram.com/ArtisanCreations"
     }
-    }  
-     }
+    ```
 
   - `GET /Commandes/getCommandeByIDArtisan/:idArtisan` - Récupérer les commandes par ID Artisan.
