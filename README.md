@@ -51,7 +51,8 @@ Voici un aperçu des relations entre les entités principales du projet :
 
 Voici un schéma UML représentant les entités et leurs relations dans **ArtFlow** :
 
-![Schéma UML]("C:/Users/chiha/Downloads/Class global.jpg")
+![Alt text]("C:/Users/chiha/Downloads/Class global.jpg"?raw=true "Title")
+
 
 ## Démarrage
 
@@ -91,9 +92,9 @@ Avant de commencer, assurez-vous d'avoir installé :
 git clone https://github.com/DivineSpeed/ArtFlow.git 
 ```
 
-2. Accédez au dossier backend :
+2. Accédez au dossier Frontend :
 ```bash
-cd backend
+cd frontend
 ```
 3. Téléchargez les packages nécessaires :
 ```bash
@@ -107,8 +108,11 @@ Double-cliquez sur le fichier start.bat dans le dossier backend, ou lancez-le di
 start.bat
 ```
 
-
-5. Exécutez le backend :
+6. Accédez au dossier Backend :
+```bash
+cd backend
+```
+7. Configurer la connexion à la base de données :
 * Le fichier application.properties se trouve dans le dossier src/main/resources du projet backend
 
 * Ouvrez ce fichier pour vérifier les paramètres de connexion à la base de données et assurez-vous que le port, l'utilisateur et le mot de passe sont correctement définis.
@@ -127,7 +131,7 @@ spring.datasource.password=mot_de_passe
 
 
 
-6. Exécuter le backend à partir d'IntelliJ : 
+8. Exécuter le backend à partir d'IntelliJ : 
 
 * Allez dans Run > Edit Configurations et assurez-vous que votre configuration est prête pour un projet Spring Boot.
 
