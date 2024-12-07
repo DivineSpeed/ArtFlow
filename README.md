@@ -153,10 +153,6 @@ spring.datasource.password=mot_de_passe
     }
     ```
 
-  ```
-
-  ```
-
 - **Admin:**
 
   - `GET /boutiques/All` - Récupérer toutes les boutiques.
