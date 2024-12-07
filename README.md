@@ -1,4 +1,4 @@
-# ArtFlow ![artflow_logo_resized](https://github.com/user-attachments/assets/171f1e4b-53c7-45e7-a097-46b52edcfd51)
+# ArtFlow 
 
 
 
