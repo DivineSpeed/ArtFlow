@@ -129,7 +129,6 @@ spring.datasource.password=mot_de_passe
          "mail": "admin@example.com",
          "password": "admin123"
       }
-       ```
 
 - **Visiteur:**
 
@@ -179,7 +178,6 @@ spring.datasource.password=mot_de_passe
          "quantite": 10,
          "imageProduit": "https://example.com/images/table.jpg"
       }
-       ```
 
   - `DELETE /produits/artisan/deleteProduit/:idProduit` - Supprimer un produit existant.
   - `POST /produits/artisan/getProduitById/:idProduit` - Récupérer un produit par son idProduit.
