@@ -51,7 +51,9 @@ Voici un aperçu des relations entre les entités principales du projet :
 
 Voici un schéma UML représentant les entités et leurs relations dans **ArtFlow** :
 
-![Alt text]("C:/Users/chiha/Downloads/Class global.jpg"?raw=true "Title")
+
+![Class global](https://github.com/user-attachments/assets/b343c731-12ab-4818-81ab-5d0d3d97cdc2)
+
 
 
 ## Démarrage
