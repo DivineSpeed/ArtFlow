@@ -5,6 +5,7 @@ import { CartItemComponent } from './cart/components/cart-item/cart-item.compone
 import { CheckoutComponent } from './cart/components/checkout/checkout.component';
 import { HomeComponent } from './visitor/components/home/home.component';
 import { OrderSummaryComponent } from './cart/components/order-summary/order-summary.component';
+import { TestComponent } from './test/test.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'home', component:  HomeComponent},
   { path: 'cart', component: CartItemComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'thank-you', component: OrderSummaryComponent }
-  
+  { path: 'thank-you', component: OrderSummaryComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: TestComponent }
 ];

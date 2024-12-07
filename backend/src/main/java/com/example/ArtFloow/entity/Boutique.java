@@ -41,6 +41,9 @@ public class Boutique {
     @JoinColumn(name = "idArtisan", referencedColumnName = "idArtisan", nullable = false)
     private Artisan artisan;
 
+    public Boutique() {
+    }
+
     // Getters et setters
     public Long getIdBoutique() {
         return idBoutique;

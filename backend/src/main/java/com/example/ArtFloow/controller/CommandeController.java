@@ -108,51 +108,48 @@ public class CommandeController {
 
 
     @GetMapping("/getCommandeByIDArtisan/{idArtisan}")
-    public ResponseEntity<?> getCommandeByidArtisan(@PathVariable Long idArtisan) {
-        try {
-            // Récupérer l'artisan
-            Artisan artisan = artisanservice.getArtisanById(idArtisan);
-            if (artisan == null) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Artisan non trouvé.");
-            }
-
-            // Récupérer les boutiques de l'artisan
-            List<Boutique> boutiques = boutiqueservice.getBoutiqueByIdartisan(artisan);
-            if (boutiques.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aucune boutique trouvée pour cet artisan.");
-            }
-
-            // Récupérer les produits de toutes les boutiques
-            List<Produit> produitsBoutique = boutiques.stream()
-                    .flatMap(boutique -> boutiqueservice.getProductByIdBoutique(boutique.getIdBoutique()).stream())
-                    .collect(Collectors.toList());
-
-            if (produitsBoutique.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aucun produit trouvé pour les boutiques de cet artisan.");
-            }
-
-            // Récupérer toutes les commandes
-            List<Commande> toutesLesCommandes = commandeService.getCommandes();
-
-            // Filtrer les commandes contenant au moins un produit des boutiques de l'artisan
-            List<Commande> commandesFiltrees = toutesLesCommandes.stream()
-                    .filter(commande -> commande.getPanier().getItems().stream()
-                            .anyMatch(item -> produitsBoutique.contains(item.getProduit())))
-                    .collect(Collectors.toList());
-
-            // Vérifier si des commandes ont été trouvées
-            if (commandesFiltrees.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aucune commande associée aux boutiques de cet artisan.");
-            }
-
-            return ResponseEntity.ok(commandesFiltrees); // Retourner les commandes filtrées
-
-        } catch (IllegalArgumentException ex) {
-            return ResponseEntity.badRequest().body("Erreur de requête : " + ex.getMessage()); // HTTP 400
-        } catch (RuntimeException ex) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur serveur : " + ex.getMessage()); // HTTP 500
+public ResponseEntity<?> getCommandeByidArtisan(@PathVariable Long idArtisan) {
+    try {
+        // Récupérer l'artisan
+        Artisan artisan = artisanservice.getArtisanByCompteId(idArtisan);
+        if (artisan == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Artisan non trouvé.");
         }
+
+        // Récupérer la boutique de l'artisan
+        Boutique boutique = boutiqueservice.getBoutiqueByUserId(idArtisan);
+        if (boutique == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aucune boutique trouvée pour cet artisan.");
+        }
+
+        // Récupérer les produits de la boutique
+        List<Produit> produitsBoutique = boutiqueservice.getProductByIdBoutique(boutique.getIdBoutique());
+        if (produitsBoutique.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aucun produit trouvé pour la boutique de cet artisan.");
+        }
+
+        // Récupérer toutes les commandes
+        List<Commande> toutesLesCommandes = commandeService.getCommandes();
+
+        // Filtrer les commandes contenant au moins un produit de la boutique
+        List<Commande> commandesFiltrees = toutesLesCommandes.stream()
+                .filter(commande -> commande.getPanier().getItems().stream()
+                        .anyMatch(item -> produitsBoutique.contains(item.getProduit())))
+                .collect(Collectors.toList());
+
+        // Vérifier si des commandes ont été trouvées
+        if (commandesFiltrees.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aucune commande associée à la boutique de cet artisan.");
+        }
+
+        return ResponseEntity.ok(commandesFiltrees); // Retourner les commandes filtrées
+
+    } catch (IllegalArgumentException ex) {
+        return ResponseEntity.badRequest().body("Erreur de requête : " + ex.getMessage()); // HTTP 400
+    } catch (RuntimeException ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur serveur : " + ex.getMessage()); // HTTP 500
     }
+}
 
 
 

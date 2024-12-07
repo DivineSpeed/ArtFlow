@@ -7,6 +7,7 @@ import com.example.ArtFloow.entity.Compte;
 import com.example.ArtFloow.service.BoutiqueService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,19 +17,22 @@ import java.util.List;
 public class BoutiqueController {
 
     private final BoutiqueService boutiqueService;
+    private final PasswordEncoder passwordEncoder;
 
-    public BoutiqueController(BoutiqueService boutiqueService) {
+    public BoutiqueController(BoutiqueService boutiqueService, PasswordEncoder passwordEncoder) {
         this.boutiqueService = boutiqueService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @PostMapping("/createBoutique")
     public ResponseEntity<?> createBoutique(@RequestBody BoutiqueRequest boutiqueRequest) {
         try {
-            // Créer un compte
+            // Créer un compte avec mot de passe hashé
             Compte compte = new Compte();
             compte.setEmail(boutiqueRequest.getEmail());
-            compte.setMotDePasse(boutiqueRequest.getPassword());
+            compte.setMotDePasse(passwordEncoder.encode(boutiqueRequest.getPassword())); // Hachage du mot de passe
             compte.setRole(boutiqueRequest.getRole() != null ? boutiqueRequest.getRole() : Compte.Role.ARTISAN);
+
             // Créer un artisan
             Artisan artisan = new Artisan();
             artisan.setNomArtisan(boutiqueRequest.getNomArtisan());

@@ -31,7 +31,11 @@ public class Compte {
         @Column(name = "dateCreation") // TIMESTAMP
         private LocalDateTime dateCreation = LocalDateTime.now();
 
-
+        public Compte(String email, String motDePasse, Role role) {
+                this.email = email;
+                this.motDePasse = motDePasse;
+                this.role = role;
+        }
 
         public Compte(){
                 this.dateCreation = LocalDateTime.now();

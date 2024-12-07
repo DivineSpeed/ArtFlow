@@ -20,6 +20,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MyspaceComponent  implements OnInit {
   products : any 
   store : any 
+  
   ngOnInit(): void {
     this._prodService.getProductByUSer().subscribe(
       (data) => {
@@ -33,11 +34,14 @@ export class MyspaceComponent  implements OnInit {
     this._prodService.getStoreById().subscribe(
       (data) => {
         this.store = data
+        
+        
       },
       (error) => {
         console.error('Error fetching products:', error);
       }
     )
+   
    
   }
   constructor(public dialog: MatDialog,private _prodService : ProductService,private _snackBar : MatSnackBar) {}
