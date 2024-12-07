@@ -178,7 +178,9 @@ spring.datasource.password=mot_de_passe
   - `DELETE /produits/artisan/deleteProduit/:idProduit` - Supprimer un produit existant.
   - `POST /produits/artisan/getProduitById/:idProduit` - Récupérer un produit par son idProduit.
   - `POST /artisan/updateProfile`
+
     ###### Paramètre JSON Body - Exemple :
+
     {
     {
     "userId": 16,
@@ -195,4 +197,5 @@ spring.datasource.password=mot_de_passe
     }
     }  
      }
+
   - `GET /Commandes/getCommandeByIDArtisan/:idArtisan` - Récupérer les commandes par ID Artisan.
