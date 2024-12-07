@@ -1,0 +1,340 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f4f4f4;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lora', serif !important;
+}
+
+.container {
+    position: relative;
+}
+
+h2 {
+    font-size: 2.3rem;
+    /* Slightly reduced from original */
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: capitalize;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+    .col-3 {
+        flex: 0 0 calc(50% - 20px);
+        /* Stack items into 2 per row on smaller screens */
+    }
+
+    .category-card,
+    .testimonial-card {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .col-3 {
+        flex: 0 0 100%;
+        /* Stack items into 1 per row on very small screens */
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://wallpaperaccess.com/full/1933524.jpg') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    /* Slightly reduced */
+    font-weight: 600;
+    z-index: 2;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    /* Slightly reduced */
+    z-index: 2;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+/* Categories */
+.category-img {
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.category-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    perspective: 1000px;
+}
+
+.category-card:hover {
+    transform: rotateX(10deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.col-3 {
+    flex: 0 0 23%;
+    margin-bottom: 20px;
+}
+
+h2.text-center {
+    font-family: var(--font-heading);
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+    position: relative;
+    margin-bottom: 50px;
+    /* Increased bottom margin */
+    text-transform: capitalize;
+    line-height: 1.2;
+}
+
+h2.text-center::before,
+h2.text-center::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #007bff, transparent);
+    bottom: -10px;
+    /* Moved decoration further down */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+h2.text-center::before {
+    width: 30px;
+    background: linear-gradient(to right, transparent, #2c3e50, transparent);
+}
+
+h2.text-center:hover::before,
+h2.text-center:hover::after {
+    width: 100px;
+}
+
+/* Subtle text shadow for depth */
+h2.text-center {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.category-card h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.category-card h5::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #007bff, transparent);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.category-card:hover h5::after {
+    width: 100px;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.pagination-controls button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: white;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.pagination-controls button:disabled {
+    background-color: #9acbff;
+    cursor: not-allowed;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pagination-controls span {
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+/* Testimonials */
+.testimonials-section .col-md-3 {
+    flex: 0 0 calc(30% - 15px);
+    max-width: calc(30% - 15px);
+}
+
+.testimonials-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .testimonials-section .col-md-3 {
+        flex: 0 0 calc(45% - 15px);
+        max-width: calc(45% - 15px);
+    }
+
+    h2.text-center {
+        font-size: 2.1rem;
+        margin-bottom: 40px;
+    }
+
+    h2.text-center::after {
+        bottom: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-section .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.testimonial-card {
+    height: 240px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #f8f9fa, #e0e0e0);
+}
+
+.testimonial-card .card-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.testimonial-card .card-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #007bff;
+    text-align: right;
+    margin-top: auto;
+}
+
+.testimonial-card:hover .card-subtitle {
+    color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

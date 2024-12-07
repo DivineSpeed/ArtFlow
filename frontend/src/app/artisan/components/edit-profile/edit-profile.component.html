@@ -1,0 +1,99 @@
+<div mat-dialog-content class="container dialog-content dialog">
+    <h1 mat-dialog-title class="text-center">Edit Store</h1>
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="firstFormGroup">
+                <!-- First Name -->
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>First Name</mat-label>
+                            <input matInput placeholder="First Name" formControlName="firstName">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Last Name -->
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Last Name" formControlName="lastName">
+
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Store Name</mat-label>
+                            <input matInput placeholder="Store Name" formControlName="storeName">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Store Description -->
+                <div class="row">
+
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Store Description</mat-label>
+                            <textarea matInput placeholder="Description" formControlName="storeDescription"></textarea>
+
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Store Address -->
+                <div class="row">
+
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Store Address</mat-label>
+                            <input matInput placeholder="Store Address" formControlName="storeAddress">
+
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>facebook Link</mat-label>
+                            <input matInput placeholder="facebook Link" formControlName="facebookLink">
+
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Instgram Link</mat-label>
+                            <input matInput placeholder="Instgram Link" formControlName="instagramLink">
+
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-4 mx-auto">
+                        
+                           <button mat-raised-button class="custom-btn" (click)="createStore()">Edit Store</button>
+                        
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

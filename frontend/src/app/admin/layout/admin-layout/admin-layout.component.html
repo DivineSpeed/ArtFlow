@@ -1,0 +1,63 @@
+<div class="admin-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-container">
+            <img src="/assets/admin-logo.svg" alt="Admin Logo" class="logo">
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a routerLink="/admin/dashboard" class="nav-link">
+                    <i class="icon dashboard-icon"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/admin/orders" class="nav-link">
+                    <i class="icon orders-icon"></i>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/admin/stores" class="nav-link">
+                    <i class="icon stores-icon"></i>
+                    <span>Stores</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/admin/analytics" class="nav-link">
+                    <i class="icon analytics-icon"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="/assets/admin-avatar.png" alt="Admin Avatar" class="profile-image">
+                <div class="profile-details">
+                    <span class="admin-name">Sophia Chen</span>
+                    <span class="admin-role">Super Admin</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <header class="header">
+            <h1>{{ pageTitle }}</h1>
+            <div class="header-right">
+                <div class="notification-container">
+                    <button class="notification-button">
+                        <i class="notification-icon"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

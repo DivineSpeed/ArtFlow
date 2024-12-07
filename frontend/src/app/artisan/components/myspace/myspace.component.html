@@ -1,0 +1,139 @@
+
+<app-header></app-header>
+<div class="container-fluid body">
+    <div class="row">
+        <!-- Profile Card -->
+           
+        <div class="profile-info-card col-lg-4 col-md-5 mx-auto">
+            <!-- Header with Title and Edit Button -->
+            <div class="row align-items-center mb-3 d-flex justify-content-between">
+              <div class="col-auto">
+                <div class="name title">
+                  Your Shop:
+                </div>
+              </div>
+              <div class="col-auto">
+                <button class="btn custom-btn" (click)="open_Dialog_Edit_Profile()">
+                  <i class="fas fa-edit icon"></i> Edit
+                </button>
+              </div>
+            </div>
+          
+            <!-- Profile Picture -->
+            <div class="text-center mb-3">
+              <img 
+                src="https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=" 
+                class="img img-fluid"
+                style="border-radius: 50%; width: 150px; height: 150px;"
+              >
+            </div>
+          
+            <!-- Shop Name -->
+            <div class="text-center name title mb-3">
+              <i class="fas fa-store icon"></i> 
+              <span style="color: black;">Shop Name: {{ store.nomBoutique   }}</span>
+            </div>
+
+            <!-- Shop Description -->
+            <div class="text-center subtitle gray mb-3">
+                <i class="fas fa-info-circle icon"></i> 
+                <span style="color: black;">Description: {{ store.description }}</span>
+              </div>
+              <!-- Artisan's Address -->
+            <div class="text-center subtitle gray mb-3">
+                <i class="fas fa-map-marker-alt icon"></i> 
+                <span style="color: black;">Shop Address: {{ store.adresseBoutique }}</span>
+              </div>
+                <!-- Date of Registration -->
+            <div class="text-center subtitle gray mb-3">
+                <i class="fas fa-calendar-alt icon"></i> 
+                <span style="color: black;">Registration Date: {{ store.dateCreation | date:'yyyy-MM-dd' }}</span>
+              </div>
+              <hr class="mt-4 mb-4" style="width: 50%; margin: auto; border: 1px solid lightgray;">
+              <!-- Unique ID -->
+            <div class="text-center subtitle mb-3">
+                <i class="fas fa-id-badge icon"></i> 
+                <span style="color: black;">Artisan ID: {{ store.artisan.idArtisan }}</span>
+              </div>
+            <!-- Artisan's Full Name -->
+            <div class="text-center subtitle gray mb-3">
+              <i class="fas fa-user icon"></i> 
+              <span style="color: black;">Name: {{ store.artisan.prenomArtisan }} {{ store.artisan.nomArtisan }}</span>
+            </div>
+          
+            
+          
+            <!-- Phone Number -->
+            <div class="text-center subtitle mb-3">
+              <i class="fas fa-phone icon"></i> 
+              <span style="color: black;">Phone Number: {{ store.artisan.numTelephone }}</span>
+            </div>
+          
+          
+          
+            
+          
+            
+          
+            <!-- Instagram Link -->
+            <div class="text-center subtitle mb-3">
+              <i class="fab fa-instagram icon"></i> 
+              <a [href]="store.instagramLink" target="_blank" style="color: black;">
+                {{ store.instagramLink }}
+              </a>
+            </div>
+            <div class="text-center subtitle mb-3">
+                <i class="fab fa-facebook icon"></i> 
+                <a [href]="store.instagramLink" target="_blank" style="color: black;">
+                  {{ store.facebookLink }}
+                </a>
+              </div>
+          </div>
+          
+        
+
+        <!-- Products Section -->
+        <div class="col-lg-8 col-md-6 mx-auto">
+            <div class="profile-info-card">
+                <div class="row align-items-center mb-3 d-flex justify-content-between">
+                    <div class="col-auto">
+                        <div class="name title">
+                            Your Products:
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn custom-btn" (click)="openDialog()" >
+                            <i class="fas fa-plus-circle icon"></i> Add Product
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Product Cards -->
+                    <div class="col-md-6 col-lg-4 mb-4" *ngFor="let product of products">
+                      <div class="card h-100">
+                        <img 
+                          class="card-img-top" 
+                          [src]="product.imageProduit || 'https://via.placeholder.com/150'" 
+                          alt="Product Image">
+                        <div class="card-body">
+                          <h2 class="card-title">{{ product.nomProduit }}</h2>
+                          <p class="card-text">{{ product.descriptionProduit }}</p>
+                          <p class="price"><strong>Price:</strong> ${{ product.prix }}</p>
+                          <p class="quantity"><strong>Quantity:</strong> {{ product.quantiteEnStock }} in stock</p>
+                          <button class="btn custom-btn" (click)="openDialogEdit(product.idProduit)">
+                            <i class="fas fa-edit icon"></i> Edit
+                          </button> 
+                          <button class="btn delete-btn" (click)="deleteProduct(product.idProduit)">
+                            <i class="fas fa-trash icon"></i> Delete
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

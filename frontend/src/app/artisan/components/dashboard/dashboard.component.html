@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <h3>
+        Artisan / dashboard
+    </h3>
+    <h2 class="mb-4">Arisan Dashboard</h2>
+  
+    <!-- Chart Section -->
+    <div class="mb-4">
+      <canvas baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [type]="'bar'"
+        [options]="chartOptions">
+      </canvas>
+    </div>
+  
+    <!-- Table Section -->
+    <div class="card mt-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h4>Confirmed Commands</h4>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>ID Commande</th>
+                <th>Date</th>
+                <th>Total Price</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let command of commands">
+                <tr   [class]="getStatusClass(command.status)">
+                  <td>{{ command.idCommande }}</td>
+                  <td>{{ command.dateCommande }}</td>
+                  <td>{{ command.prixTotalCommande }}</td>
+                  <td>{{ command.adresseLivraison }}</td>
+                  <td >
+                    <!-- Dropdown for Status -->
+                    <mat-form-field appearance="fill" class="status-select">
+                        <mat-label>Status</mat-label>
+                        <mat-select
+                          [value]="command.status"
+                          (selectionChange)="updateStatus(command, $event.value)"
+                        >
+                          <mat-option value="Delivered">Delivered</mat-option>
+                          <mat-option value="In Progress">In Progress</mat-option>
+                          <mat-option value="waiting">waiting</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </td>
+                  <td>
+                    <button mat-button color="primary">View</button>
+                    <button mat-button color="warn">Delete</button>
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+  <app-footer></app-footer>
+  

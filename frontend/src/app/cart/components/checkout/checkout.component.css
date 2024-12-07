@@ -1,0 +1,109 @@
+
+.checkout-card {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.08),
+        0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.checkout-card:hover {
+    transform: translateY(-5px);
+}
+
+.checkout-card h3 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.form-label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.form-control,
+.form-select {
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 10px;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #5bc0de;
+    box-shadow:
+        0 0 0 0.2rem rgba(91, 192, 222, 0.25);
+    outline: none;
+}
+
+.btn-primary {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #3498db;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+small.text-danger {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    color: #e74c3c;
+    margin-top: 5px;
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .checkout-card {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .checkout-card h3 {
+        font-size: 1.8rem;
+    }
+}

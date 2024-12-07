@@ -1,0 +1,11 @@
+{
+    "/send-email": {
+      "target": "https://api.sendgrid.com",
+      "secure": true,
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/send-email": "/v3/mail/send"
+      }
+    }
+  }

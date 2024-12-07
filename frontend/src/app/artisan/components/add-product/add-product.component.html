@@ -1,0 +1,73 @@
+<div mat-dialog-content class="container box">
+    <h1 mat-dialog-title class="text-center">Add New Product</h1>
+  
+    <form [formGroup]="productForm" (ngSubmit)="onAddProduct()">
+      <div class="form-group mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="productName" 
+          placeholder="Enter product name" 
+          formControlName="nomProduit">
+        <small class="text-danger" *ngIf="productForm.get('nomProduit')?.invalid && productForm.get('nomProduit')?.touched">
+          Product name is required and must be at least 3 characters.
+        </small>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="productImage" class="form-label">Image Link</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="productImage" 
+          placeholder="Enter product image link" 
+          formControlName="imageProduit">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="productDescription" class="form-label">Description</label>
+        <textarea 
+          class="form-control" 
+          id="productDescription" 
+          rows="3" 
+          placeholder="Enter product description" 
+          formControlName="descriptionProduit">
+        </textarea>
+        <small class="text-danger" *ngIf="productForm.get('descriptionProduit')?.invalid && productForm.get('descriptionProduit')?.touched">
+          Description is required and cannot exceed 500 characters.
+        </small>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="productPrice" class="form-label">Price</label>
+        <input 
+          type="number" 
+          class="form-control" 
+          id="productPrice" 
+          placeholder="Enter product price" 
+          formControlName="prix">
+        <small class="text-danger" *ngIf="productForm.get('prix')?.invalid && productForm.get('prix')?.touched">
+          Price is required and must be a positive number.
+        </small>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="productQuantity" class="form-label">Quantity</label>
+        <input 
+          type="number" 
+          class="form-control" 
+          id="productQuantity" 
+          placeholder="Enter product quantity" 
+          formControlName="quantiteEnStock">
+        <small class="text-danger" *ngIf="productForm.get('quantiteEnStock')?.invalid && productForm.get('quantiteEnStock')?.touched">
+          Quantity is required and must be a non-negative number.
+        </small>
+      </div>
+  
+      <div mat-dialog-actions class="d-flex justify-content-end">
+        <button mat-button class="custom-btn ml-3" type="submit" [disabled]="productForm.invalid">Add Product</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,21 @@
+# Logs
+logs/
+*.log
+
+# Node modules
+node_modules/
+
+# Angular environment files
+frontend/src/environments/
+
+# Spring Boot target directory
+/target/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.iml
+
+# OS-generated files
+.DS_Store
+Thumbs.db

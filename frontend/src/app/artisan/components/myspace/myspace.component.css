@@ -1,0 +1,129 @@
+.delete-btn {
+    background-color: #ffdeda; /* Bright red for delete */
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.card-body .price, .card-body .quantity {
+    font-size: 1em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.custom-btn, .delete-btn {
+    
+    margin: 5px;
+    font-size: 0.9em;
+}
+
+
+.delete-btn:hover {
+    background-color: #ffc0b9;  /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.custom-btn {
+    background-color: #e3e3e6;  /* Custom button color */
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.custom-btn .icon {
+    margin-right: 8px;
+}
+
+.custom-btn:hover {
+    background-color: #d7d7dd;  /* Slightly darker on hover */
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info-card .name.title {
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #333333;
+}
+
+
+.body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ 
+    background-color: #f3f4f6;
+    padding-bottom: 50px;
+}
+
+.profile-info-card {
+    margin-top: 80px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+    font-size: 1.2em;
+}
+
+.profile-info-card .img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.profile-info-card .name {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #000;
+    text-align: center;
+}
+
+.profile-info-card .subtitle {
+    font-size: 1em;
+    color: #333;
+}
+
+.profile-info-card .subtitle.gray {
+    color: #888;
+}
+
+.profile-info-card .divider {
+    width: 80%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px auto;
+}
+
+.profile-info-card .icon {
+    color: #8d6b4b;
+    margin-right: 8px;
+}
+
+.profile-info-card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.profile-info-card a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    width: 95%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

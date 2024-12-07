@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thank You For Your Purchase</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style type="text/css">
+        /* Reset and base styles */
+        body,
+        table,
+        td,
+        div,
+        p,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        /* Container styles */
+        .email-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .email-container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Header styles */
+        .header-section {
+            text-align: center;
+        }
+
+        .thank-you-icon {
+            font-size: 4rem;
+            margin-top: -1.5rem;
+            display: inline-block;
+            animation: bounce 1s infinite;
+        }
+
+        .thank-you-title {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            margin-top: 0rem;
+        }
+
+        .order-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #F5F3FF;
+            color: #2472a4;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        /* Artwork section */
+        .artwork-section {
+            background-color: #F9FAFB;
+            border-radius: 0.75rem;
+            padding: 1.5rem 1.5rem 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .artwork-container {
+            margin-bottom: 1rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .artwork-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .artwork-display {
+            display: flex;
+            align-items: center;
+        }
+
+        .artwork-thumbnail {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .artwork-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .artwork-info{
+            font-family: 'Lora', serif !important;
+            font-size: 1.15rem;
+            margin-bottom: 0rem;
+
+        }
+        .artwork-info h3 {
+            font-weight: 600;
+            color: #3182CE;
+            /* Changed to a more consistent blue */
+            transition: color 0.3s ease;
+        }
+
+        .artwork-info h3:hover {
+            color: #2B6CB0;
+        }
+
+        .artwork-details {
+            color: #4B5563;
+            margin-bottom: 3px;
+            /* Reduced gap */
+            transition: color 0.3s ease;
+        }
+
+        .artwork-store {
+            color: #6B7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.15rem;
+            transition: color 0.3s ease;
+        }
+
+        .artwork-meta {
+            
+            margin-top: 0rem;
+        }
+
+        .artwork-quantity {
+            margin: 2px 0;
+            font-size: 0.875rem;
+            color: #6B7280;
+        }
+
+        .artwork-price {
+            font-size: 0.9rem;
+            font-family: 'Lora', serif !important;
+            margin: 2px 0;
+            font-weight: 600;
+            color: #2B6CB0;
+            margin-top: 5px;
+            /* Added space between quantity and price */
+        }
+
+        /* Info sections */
+        .info-section {
+            margin-bottom: 1.25rem;
+        }
+
+        .info-card {
+            background-color: #F9FAFB;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            height: 100%;
+        }
+
+        .info-header {
+            font-family: 'Lora', serif !important;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-content {
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
+
+        /* Order total */
+        .order-total {
+            border-top: 1px solid #E5E7EB;
+            padding-top: 1.5rem;
+        }
+
+        .total-label {
+            font-family: 'Lora', serif !important;
+            font-size: 1.1rem;
+            color: #6B7280;
+            /* Increased gap between label and amount */
+        }
+
+        .total-amount {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2B6CB0;
+        }
+
+        /* Rest of the styles remain the same */
+        /* Animations and Media Queries from previous version */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .email-container {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 1rem;
+            }
+
+            .artwork-display {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .artwork-thumbnail {
+                width: 80px;
+                height: 80px;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .thank-you-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+
+<body>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td align="center" style="padding: 40px 0;">
+                <table class="email-container" width="800" cellpadding="0" cellspacing="0" border="0">
+                    <!-- Header -->
+                    <tr>
+                        <td class="header-section">
+                            <div class="thank-you-icon">❤️</div>
+                            <h1 class="thank-you-title">Thank you, {{firstName}}!</h1>
+                            <div class="order-tag">Order #ART{{orderId}}</div>
+                        </td>
+                    </tr>
+
+                    <!-- Artwork Section -->
+                    <tr>
+                        <td>
+                            <div id="artwork-section" class="artwork-section">
+                                {{#each items}}
+                                <div class="artwork-container">
+                                    <table class="artwork-display" width="100%" cellpadding="0" cellspacing="0"
+                                        border="0">
+                                        <tr>
+                                            <td width="150" align="center">
+                                                <img class="artwork-thumbnail" src="{{this.image}}" alt="{{this.name}}">
+                                            </td>
+                                            <td width="70%" style="vertical-align: top; padding-left: 10px;">
+                                                <h3 class="artwork-info">{{this.name}}</h3>
+                                                <div class="artwork-details">by {{this.artist}}</div>
+                                                <div class="artwork-store">Curated by {{this.store}}</div>
+                                                <div class="artwork-meta">
+                                                    <span class="artwork-quantity">Quantity: {{this.quantity}}</span>
+                                                    <br>
+                                                    <span class="artwork-price">{{this.price}} / per item</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Info Sections -->
+                    <tr>
+                        <td>
+                            <div class="info-section">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td width="50%" style="padding-right: 10px;">
+                                            <div class="info-card">
+                                                <div class="info-header">Shipping Details</div>
+                                                <div class="info-content">
+                                                    {{shippingAddress}}, {{city}}, {{postalCode}}<br>
+                                                    {{country}}
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td width="50%" style="padding-left: 10px;">
+                                            <div class="info-card">
+                                                <div class="info-header">Contact Information</div>
+                                                <div class="info-content">
+                                                    {{email}}<br>
+                                                    {{phone}}
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Order Summary -->
+                    <tr>
+                        <td>
+                            <div class="order-total">
+                                <div class="total-label">Total Price</div>
+                                <div class="total-amount">{{totalAmount}}</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

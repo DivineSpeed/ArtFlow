@@ -1,0 +1,53 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/1933524.jpg");
+    /* Path to your image */
+    background-size: cover;
+    /* Cover the entire viewport */
+    background-position: center;
+    /* Center the image */
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Center the content vertically and horizontally */
+    height: 100vh;
+    /* Set the height of the body to be the viewport height */
+  }
+  
+  /* Optionally, you can set other styles for your content */
+  .box {
+    padding: 50px;
+    background-color: rgb(253, 253, 253);
+    max-width: 600px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  .icon{
+    width: 25px;
+    padding-top: 20px;
+      
+    
+  }
+  
+  .example-form {
+    padding-top: 10%;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .icon-enter{
+    width: 20px;
+  }
+  .my-custom-snackbar {
+    margin: 0 !important;
+    position: absolute;
+    right: 25px;
+    top: 100%;
+  }

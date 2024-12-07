@@ -1,0 +1,54 @@
+body {
+    margin: 0; /* Remove any default margin */
+    background-image: url("https://wallpaperaccess.com/full/1933524.jpg");
+    background-size: cover; /* Ensures the background covers the viewport */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed */
+    height: 100%; /* Ensures the body takes the full height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  @media (min-width: 1400px) {
+    .center {
+      margin-top: 60px;
+    }
+  }
+    /* Optionally, you can set other styles for your content */
+    .box {
+      margin-top: 20px;
+      padding: 30px;
+      background-color: rgb(253, 253, 253);
+      border-radius: 20px;
+      box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    }
+    .icon{
+      width: 25px;
+      padding-top: 20px;
+        
+      
+    }
+    
+    
+    
+    .example-full-width {
+      width: 100%;
+    }
+    
+    .icon-enter{
+      width: 20px;
+    }
+    .my-custom-snackbar {
+      margin: 0 !important;
+      position: absolute;
+      right: 25px;
+      top: 100%;
+    }
+    
+    .mat-stepper-horizontal {
+      margin-top: 8px;
+    }
+    
+    .mat-mdc-form-field {
+      margin-top: 16px;
+    }
+  

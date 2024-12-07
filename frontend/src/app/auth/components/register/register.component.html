@@ -1,0 +1,152 @@
+<body class="container-fluid ">
+    <div class="row">
+      <div class="col-md-6 mx-auto center ">
+        <div class="box ">
+          <div class="row">
+            <div class="col-4 mx-auto  ">
+              <img src="assets/img/logo2.png" alt="" class="img-fluid" >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-stepper [linear]="true" #stepper >
+                <mat-step [stepControl]="firstFormGroup" label="Personal info">
+                  <form [formGroup]="firstFormGroup">
+                    <!-- First Name -->
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>First Name</mat-label>
+                          <input matInput placeholder="First Name" formControlName="firstName">
+                        </mat-form-field>
+                      </div>
+                    </div>
+          
+                    <!-- Last Name -->
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Last Name</mat-label>
+                          <input matInput placeholder="Last Name" formControlName="lastName">
+          
+                        </mat-form-field>
+                      </div>
+                    </div>
+          
+                    <!-- Phone Number -->
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Phone Number</mat-label>
+                          <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+          
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div>
+                      <button mat-button matStepperNext>Next</button>
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup" label="Store info">
+                  <form [formGroup]="secondFormGroup">
+                    <!-- Store Name -->
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Store Name</mat-label>
+                          <input matInput placeholder="Store Name" formControlName="storeName">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <!-- Store Description -->
+                    <div class="row">
+          
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Store Description</mat-label>
+                          <textarea matInput placeholder="Description" formControlName="storeDescription"></textarea>
+          
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <!-- Store Address -->
+                    <div class="row">
+          
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Store Address</mat-label>
+                          <input matInput placeholder="Store Address" formControlName="storeAddress">
+          
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button matStepperNext>Next</button>
+                    </div>
+                  </form>
+                </mat-step>
+          
+          
+                <mat-step [stepControl]="thirdFormGroup" label="Login info">
+                  <form [formGroup]="thirdFormGroup">
+                    <!-- Email Field -->
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Email</mat-label>
+                          <input matInput placeholder="exemple@gmail.com" formControlName="email">
+                        </mat-form-field>
+                      </div>
+                    </div>
+          
+                    <!-- Password Field -->
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Password</mat-label>
+                          <input type="password" matInput placeholder="********" formControlName="password">
+                          <mat-error>{{passwordVerif}}</mat-error>
+                        </mat-form-field>
+                        
+                      </div>
+                    </div>
+                    <!-- Password Field -->
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Password</mat-label>
+                          <input type="password" matInput placeholder="********" formControlName="rePassword">
+                          <mat-error>{{passwordMatch}}</mat-error>
+                        </mat-form-field>
+
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-raised-button color="primary" (click)="createStore()"  >Create Store</button>
+                    </div>
+                  </form>
+                </mat-step>
+              </mat-stepper>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+  
+  
+  
+  
+  
+      
+     
+     
+     
+    </div>
+  </body>
+  

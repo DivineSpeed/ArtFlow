@@ -1,0 +1,40 @@
+.table .form-select {
+    width: 150px;
+  }
+  
+  
+  .chart-container {
+    position: relative;
+    height: 400px;
+  }
+  
+  .card-header {
+    background-color: #3f51b5;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .mat-raised-button {
+    margin-right: 10px;
+  }
+  .status-select {
+    width: 150px; /* Adjust based on your design */
+  }
+  
+  .mat-select-value {
+    color: inherit; /* Allows dynamic text color */
+  }
+  
+  .text-success {
+    color: green !important;
+  }
+  
+  .text-warning {
+    color: orange !important;
+  }
+  
+  .text-danger {
+    color: red !important;
+    
+  }
+  

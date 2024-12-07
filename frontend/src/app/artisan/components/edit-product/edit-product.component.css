@@ -1,0 +1,83 @@
+/* Dialog Title */
+.box{
+    padding: 15px;
+}
+h1.mat-dialog-title {
+    font-size: 1.8em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Dialog Content Styling */
+  form .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #8d6b4b; /* Slight brownish color to match palette */
+  }
+  
+  /* Input Styling */
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #8d6b4b;
+    box-shadow: 0px 0px 5px rgba(141, 107, 75, 0.3);
+  }
+  
+  /* Custom Button Styles */
+  .custom-btn {
+    background-color: #e3e3e6;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-top: none;
+  }
+  
+  .custom-btn:hover {
+    background-color: #d7d7dd;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Custom Styles for Delete Button (if needed) */
+  .delete-btn {
+    background-color: #ffdeda;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .delete-btn:hover {
+    background-color: #ffc0b9;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Dialog Container Styling */
+  .mat-dialog-container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-dialog-actions {
+    margin-top: 15px;
+  }
+  
