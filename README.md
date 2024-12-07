@@ -200,3 +200,6 @@ spring.datasource.password=mot_de_passe
     ```
 
   - `GET /Commandes/getCommandeByIDArtisan/:idArtisan` - Récupérer les commandes par ID Artisan.
+
+## Tests et Validations
+
