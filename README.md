@@ -124,10 +124,12 @@ spring.datasource.password=mot_de_passe
 
   ###### Paramètre JSON Body - Exemple :
 
+      ```json
       {
          "mail": "admin@example.com",
          "password": "admin123"
       }
+       ```
 
 - **Visiteur:**
 
@@ -137,17 +139,23 @@ spring.datasource.password=mot_de_passe
   - `DELETE /cart/removeItem?:Idproduit` - Supprimer produit du panier .
   - `POST /Commandes/creer` - Créer commande .
     ###### Paramètre JSON Body - Exemple :
-        {
-           "nomVisiteur": "Ahmed",
-           "prenomVisiteur": "Ali",
-           "dateCommande": "2024-12-06T09:15:00",
-           "adresseLivraison": "45 Avenue de l'Indépendance",
-           "ville": "Tunis",
-           "codePostal": "1001",
-           "pays": "Tunisie",
-           "numeroTelephone": "+2162384751",
-           "email": "ahmed.ali@example.com"
-        }
+    ```json
+    {
+      "nomVisiteur": "Ahmed",
+      "prenomVisiteur": "Ali",
+      "dateCommande": "2024-12-06T09:15:00",
+      "adresseLivraison": "45 Avenue de l'Indépendance",
+      "ville": "Tunis",
+      "codePostal": "1001",
+      "pays": "Tunisie",
+      "numeroTelephone": "+2162384751",
+      "email": "ahmed.ali@example.com"
+    }
+    ```
+
+  ```
+
+  ```
 
 - **Admin:**
 
@@ -167,6 +175,7 @@ spring.datasource.password=mot_de_passe
 
   ###### Paramètre JSON Body - Exemple :
 
+      ```json
       {
          "nomProduit": "Table en bois",
          "descriptionProduit": "Une table artisanale fabriquée à la main.",
@@ -174,6 +183,7 @@ spring.datasource.password=mot_de_passe
          "quantite": 10,
          "imageProduit": "https://example.com/images/table.jpg"
       }
+       ```
 
   - `DELETE /produits/artisan/deleteProduit/:idProduit` - Supprimer un produit existant.
   - `POST /produits/artisan/getProduitById/:idProduit` - Récupérer un produit par son idProduit.
