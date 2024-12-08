@@ -1,1 +1,74 @@
-<p>store-management works!</p>
+<div class="store-management-container">
+  <div class="management-header">
+    <mat-form-field appearance="outline">
+      <mat-label class="t-header">Search stores</mat-label>
+      <input matInput (keyup)="applyFilter($event)" class="t-not-header"  placeholder="Enter store name or ID">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Sort By</mat-label>
+      <mat-select class="t-header" [(value)]="selectedSortOption" (selectionChange)="onSortOptionChange()">
+        <mat-option *ngFor="let option of sortOptions" [value]="option.value">
+          {{option.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="table-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="idBoutique">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Store ID</th>
+        <td class="t-not-header" mat-cell *matCellDef="let store">{{store.idBoutique}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomBoutique">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Store Name</th>
+        <td class="t-not-header" mat-cell *matCellDef="let store">{{store.nomBoutique}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="artisanName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Artisan</th>
+        <td class="t-not-header" mat-cell *matCellDef="let store">
+          {{store.artisan.prenomArtisan}} {{store.artisan.nomArtisan}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalArtworksListed">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Total Artworks</th>
+        <td class="t-not-header" mat-cell *matCellDef="let store">{{store.totalArtworksListed}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalSales">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Total Sales</th>
+        <td class="t-not-header" mat-cell *matCellDef="let store">{{store.totalSales}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalRevenue">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Total Revenue</th>
+        <td class="t-not-header" mat-cell *matCellDef="let store">{{store.totalRevenue | currency}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="actions-header t-header">Actions</th>
+        <td mat-cell *matCellDef="let store">
+          <div class="action-buttons">
+            <button mat-icon-button (click)="viewStoreDetails(store)" class="view-details-btn">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteStore(store)" class="delete-btn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <mat-paginator class="t-not-header" [pageSizeOptions]="[7, 10, 25, 50]" showFirstLastButtons aria-label="Select page of store data">
+  </mat-paginator>
+</div>

@@ -1,1 +1,192 @@
-<p>order-management works!</p>
+<div class="order-management-container">
+    <div class="management-header">
+        <mat-form-field appearance="outline">
+            <mat-label class="t-header">Search orders</mat-label>
+            <input matInput (keyup)="applyFilter($event)" class="t-not-header"
+                placeholder="Enter customer name or order ID">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Sort By</mat-label>
+            <mat-select class="t-header" [(value)]="selectedSortOption" (selectionChange)="onSortOptionChange()">
+                <mat-option *ngFor="let option of sortOptions" [value]="option.value">
+                    {{option.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="table-container mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="idCommande">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Order ID</th>
+                <td class="t-not-header" mat-cell *matCellDef="let order">{{order.idCommande}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="customerName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Customer Name</th>
+                <td class="t-not-header" mat-cell *matCellDef="let order">
+                    {{order.nomVisiteur}} {{order.prenomVisiteur}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dateCommande">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Order Date</th>
+                <td class="t-not-header" mat-cell *matCellDef="let order">
+                    {{formatOrderDate(order.dateCommande)}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="prixTotalCommande">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Total Amount</th>
+                <td class="t-not-header" mat-cell *matCellDef="let order">
+                    {{order.prixTotalCommande | currency}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="itemCount">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Items</th>
+                <td class="t-not-header" mat-cell *matCellDef="let order">
+                    {{getItemCount(order)}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="orderStatus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="t-header">Order Status</th>
+                <td class="t-not-header" mat-cell *matCellDef="let order">
+                    {{order.orderStatus || 'UNKNOWN'}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef class="actions-header t-header">Actions</th>
+                <td mat-cell *matCellDef="let order">
+                    <div class="action-buttons">
+                        <button mat-icon-button (click)="viewOrderDetails(order)" class="view-details-btn">
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+
+    <!-- Add this right after your table-container div in order-management.component.html -->
+    <div class="side-panel" [class.open]="selectedOrder">
+        <div class="panel-header" *ngIf="selectedOrder">
+            <h2 class="t-headerside">Order #{{selectedOrder.idCommande}} Details</h2>
+            <button mat-icon-button (click)="closeOrderDetails()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+
+        <div class="panel-content" *ngIf="selectedOrder">
+            <div class="order-section">
+                <h3 class="t-headerside">Customer Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Name:</span>
+                        <span>{{selectedOrder.nomVisiteur}} {{selectedOrder.prenomVisiteur}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Email:</span>
+                        <span>{{selectedOrder.email}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Phone:</span>
+                        <span>{{selectedOrder.numeroTelephone}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-section">
+                <h3 class="t-headerside">Shipping Address</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Address:</span>
+                        <span>{{selectedOrder.adresseLivraison}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">City:</span>
+                        <span>{{selectedOrder.ville}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Postal Code:</span>
+                        <span>{{selectedOrder.codePostal}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Country:</span>
+                        <span>{{selectedOrder.pays}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update the Order Items section in the side panel -->
+            <div class="order-section">
+                <h3 class="t-headerside">Order Items</h3>
+                <div class="items-list" *ngIf="selectedOrder && selectedOrder.panier.items.length > 0">
+                    <div class="item-carousel">
+                        <div class="item-card">
+                            <button class="carousel-nav-btn prev" (click)="prevItem()"
+                                *ngIf="selectedOrder.panier.items.length > 1">
+                                <mat-icon>chevron_left</mat-icon>
+                            </button>
+
+                            <img [src]="selectedOrder.panier.items[currentItemIndex].produit.imageProduit"
+                                [alt]="selectedOrder.panier.items[currentItemIndex].produit.nomProduit"
+                                class="item-image">
+
+                            <div class="item-details">
+                                <h4>{{ selectedOrder.panier.items[currentItemIndex].produit.nomProduit }}</h4>
+                                <p>Quantity: {{ selectedOrder.panier.items[currentItemIndex].quantite }}</p>
+                                <p>Price per unit: {{ selectedOrder.panier.items[currentItemIndex].produit.prix |
+                                    currency }}</p>
+                                <p>Subtotal: {{ selectedOrder.panier.items[currentItemIndex].quantite *
+                                    selectedOrder.panier.items[currentItemIndex].produit.prix | currency }}</p>
+                            </div>
+
+                            <button class="carousel-nav-btn next" (click)="nextItem()"
+                                *ngIf="selectedOrder.panier.items.length > 1">
+                                <mat-icon>chevron_right</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-indicators" *ngIf="selectedOrder.panier.items.length > 1">
+                        <button *ngFor="let item of selectedOrder.panier.items; let i = index"
+                            (click)="setCurrentItem(i)" [class.active]="currentItemIndex === i"
+                            class="carousel-indicator-dot">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-section">
+                <h3 class="t-headerside">Order Summary</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Order Date:</span>
+                        <span>{{formatOrderDate(selectedOrder.dateCommande)}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Order Status:</span>
+                        <span></span>
+                    </div>
+                    <div class="info-item total">
+                        <span class="label">Total Amount:</span>
+                        <span class="total-amount">{{selectedOrder.prixTotalCommande | currency}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-paginator class="t-not-header" [pageSizeOptions]="[7, 10, 25, 50]" showFirstLastButtons
+        aria-label="Select page of order data">
+    </mat-paginator>
+</div>

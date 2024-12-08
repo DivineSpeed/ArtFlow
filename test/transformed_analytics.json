@@ -1,0 +1,202 @@
+{
+  "revenueOverTime": {
+    "monthly": [
+      {
+        "month": "January",
+        "revenue": 480
+      },
+      {
+        "month": "May",
+        "revenue": 135
+      },
+      {
+        "month": "August",
+        "revenue": 135
+      },
+      {
+        "month": "December",
+        "revenue": 605
+      }
+    ],
+    "quarterly": [
+      {
+        "quarter": "Q1",
+        "revenue": 480
+      },
+      {
+        "quarter": "Q2",
+        "revenue": 135
+      },
+      {
+        "quarter": "Q3",
+        "revenue": 135
+      },
+      {
+        "quarter": "Q4",
+        "revenue": 605
+      }
+    ],
+    "yearly": [
+      {
+        "year": "2024",
+        "revenue": 1355
+      },
+      {
+        "year": "2021",
+        "revenue": 2795
+      },
+      {
+        "year": "2023",
+        "revenue": 670
+      },
+      {
+        "year": "2020",
+        "revenue": 540
+      },
+      {
+        "year": "2022",
+        "revenue": 150
+      }
+    ]
+  },
+  "ordersOverTime": {
+    "monthly": [
+      {
+        "month": "January",
+        "orders": 1
+      },
+      {
+        "month": "May",
+        "orders": 1
+      },
+      {
+        "month": "August",
+        "orders": 1
+      },
+      {
+        "month": "December",
+        "orders": 4
+      }
+    ],
+    "quarterly": [
+      {
+        "quarter": "Q1",
+        "orders": 1
+      },
+      {
+        "quarter": "Q2",
+        "orders": 1
+      },
+      {
+        "quarter": "Q3",
+        "orders": 1
+      },
+      {
+        "quarter": "Q4",
+        "orders": 4
+      }
+    ],
+    "yearly": [
+      {
+        "year": "2024",
+        "orders": 7
+      },
+      {
+        "year": "2021",
+        "orders": 2
+      },
+      {
+        "year": "2023",
+        "orders": 3
+      },
+      {
+        "year": "2020",
+        "orders": 2
+      },
+      {
+        "year": "2022",
+        "orders": 1
+      }
+    ]
+  },
+  "storesOverTime": {
+    "monthly": [
+      {
+        "month": "December",
+        "storesAdded": 4
+      }
+    ],
+    "quarterly": [
+      {
+        "quarter": "Q4",
+        "storesAdded": 4
+      }
+    ],
+    "yearly": [
+      {
+        "year": "2023",
+        "storesAdded": 3
+      },
+      {
+        "year": "2024",
+        "storesAdded": 4
+      }
+    ]
+  },
+  "totalStores": 7,
+  "totalOrders": 15,
+  "totalRevenue": 5510,
+  "topSellingArtworks": [
+    {
+      "artworkId": "19",
+      "name": "Vase Moderne en Verre",
+      "totalSales": 12
+    },
+    {
+      "artworkId": "18",
+      "name": "Le Jardin Secret",
+      "totalSales": 6
+    },
+    {
+      "artworkId": "17",
+      "name": "Coucher de Soleil sur la Mer",
+      "totalSales": 6
+    },
+    {
+      "artworkId": "27",
+      "name": "Le Voyageur",
+      "totalSales": 5
+    },
+    {
+      "artworkId": "26",
+      "name": "Lighthouse View",
+      "totalSales": 3
+    },
+    {
+      "artworkId": "1",
+      "name": "Peinture Abstraite 1",
+      "totalSales": 3
+    },
+    {
+      "artworkId": "3",
+      "name": "Peinture Abstraite 3",
+      "totalSales": 3
+    },
+    {
+      "artworkId": "4",
+      "name": "Sculpture Moderne 1",
+      "totalSales": 2
+    },
+    {
+      "artworkId": "2",
+      "name": "Peinture Abstraite 2",
+      "totalSales": 2
+    }
+  ],
+  "customerDemographics": {
+    "Tunisie": 12,
+    "Aruba": 1,
+    "Belize": 1,
+    "Barbados": 1
+  }
+}

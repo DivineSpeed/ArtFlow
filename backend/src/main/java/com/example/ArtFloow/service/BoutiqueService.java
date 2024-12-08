@@ -21,7 +21,8 @@ public class BoutiqueService {
     private final BoutiqueRepository boutiqueRepository;
     private final CompteRepository compteRepository;
 
-    public BoutiqueService(ArtisanRepository artisanRepository, BoutiqueRepository boutiqueRepository, CompteRepository compteRepository) {
+    public BoutiqueService(ArtisanRepository artisanRepository, BoutiqueRepository boutiqueRepository,
+            CompteRepository compteRepository) {
         this.artisanRepository = artisanRepository;
         this.boutiqueRepository = boutiqueRepository;
         this.compteRepository = compteRepository;
@@ -43,13 +44,10 @@ public class BoutiqueService {
         return boutiqueRepository.save(boutique);
     }
 
-
-        public Boutique getBoutiqueByUserId(Long userId) {
-            return boutiqueRepository.findByArtisanCompteIdCompte(userId)
-                    .orElse(null); // Retourne null si aucune boutique n'est trouvée
-        }
-
-
+    public Boutique getBoutiqueByUserId(Long userId) {
+        return boutiqueRepository.findByArtisanCompteIdCompte(userId)
+                .orElse(null); // Retourne null si aucune boutique n'est trouvée
+    }
 
     public List<Boutique> getBoutiques() {
         List<Boutique> boutiques = boutiqueRepository.findAll();
@@ -73,24 +71,22 @@ public class BoutiqueService {
 
     public String deleteBoutique(Long id) {
         try {
-            Boutique A = boutiqueRepository.findById(id).orElse(null);
-            if (A == null) {
-                throw new ArtisansNotFoundException("Pas de boutique trouvée pour l'ID : " + id);
+            Boutique boutique = boutiqueRepository.findById(id).orElse(null);
+            if (boutique == null) {
+                throw new ArtisansNotFoundException("No boutique found for ID: " + id);
             }
             boutiqueRepository.deleteById(id);
-            return ("Boutique supprimé avec succès.");
+            return "Boutique deleted successfully.";
         } catch (DataAccessException e) {
-            throw new RuntimeException("Erreur d'accès à la base de données : " + e.getMessage(), e);
+            throw new RuntimeException("Database access error: " + e.getMessage(), e);
         }
     }
-
 
     public List<Produit> getProductByIdBoutique(Long idboutique) {
         return boutiqueRepository.findProduitsByBoutique(idboutique);
     }
+
     public List<Boutique> getBoutiqueByIdartisan(Artisan artisan) {
         return boutiqueRepository.findBoutiqueByIdArtisan(artisan);
     }
-    }
-
-
+}

@@ -10,7 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/boutiques")
@@ -58,36 +60,41 @@ public class BoutiqueController {
         }
     }
 
-
     @GetMapping("/All")
     public List<Boutique> getAllboutiques() {
         // Appeler le service
         return boutiqueService.getBoutiques(); // Appel correct de la méthode
     }
+
     @GetMapping("/getBoutiqueById/{id}")
     public ResponseEntity<?> getArtisanbyId(@PathVariable Long id) {
         try {
             Boutique boutique = boutiqueService.getBoutiqueById(id);
             return ResponseEntity.ok(boutique); // HTTP 200 with product data
-        } catch (IllegalArgumentException ex) {//The ex.getMessage() method retrieves the message associated with the exception that was thrown
+        } catch (IllegalArgumentException ex) {// The ex.getMessage() method retrieves the message associated with the
+                                               // exception that was thrown
             return ResponseEntity.badRequest().body(ex.getMessage()); // HTTP 400 for bad request
         } catch (RuntimeException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage()); // HTTP 404 for not found
         }
     }
 
-
-
     @DeleteMapping("/deleteBoutiqueByid/{id}")
-    public ResponseEntity<?> DeleteBoutiquebyId(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> deleteBoutiquebyId(@PathVariable Long id) {
+        Map<String, Object> response = new HashMap<>();
         try {
-            String S = boutiqueService.deleteBoutique(id);
-            return ResponseEntity.ok(S); // HTTP 200 with product data
-        } catch (
-                IllegalArgumentException ex) {//The ex.getMessage() method retrieves the message associated with the exception that was thrown
-            return ResponseEntity.badRequest().body(ex.getMessage()); // HTTP 400 for bad request
+            String resultMessage = boutiqueService.deleteBoutique(id);
+            response.put("success", true);
+            response.put("message", resultMessage);
+            return ResponseEntity.ok(response); // HTTP 200 with JSON response
+        } catch (IllegalArgumentException ex) {
+            response.put("success", false);
+            response.put("message", ex.getMessage());
+            return ResponseEntity.badRequest().body(response); // HTTP 400 for bad request
         } catch (RuntimeException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage()); // HTTP 404 for not found
+            response.put("success", false);
+            response.put("message", ex.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // HTTP 404 for not found
         }
     }
 

@@ -21,7 +21,7 @@
   }
 }
 
-.thank-you-card p{
+.thank-you-card p {
   font-family: 'Source Sans Pro', sans-serif !important;
 }
 
@@ -30,12 +30,14 @@
 }
 
 .thank-you-icon {
-  margin-top: -1.5rem;
+  margin-top: 1rem;
   font-size: 4rem;
   animation: bounce 1s infinite;
 }
 
 .thank-you-title {
+  margin-top: 2rem !important;
+
   font-family: 'Lora', serif;
   font-size: 2.5rem;
   font-weight: 700;
@@ -142,7 +144,8 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #2B6CB0;;
+    color: #2B6CB0;
+    ;
     /* Changes to purple on hover */
     cursor: pointer;
   }
@@ -155,7 +158,8 @@
   /* Add this */
 
   &:hover {
-    color: #2B6CB0;;
+    color: #2B6CB0;
+    ;
     cursor: pointer;
   }
 }
@@ -168,7 +172,8 @@
   /* Add this */
 
   &:hover {
-    color: #2B6CB0;;
+    color: #2B6CB0;
+    ;
     cursor: pointer;
   }
 }
@@ -228,7 +233,7 @@
   .info-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
     i {
       color: #2B6CB0;
@@ -236,6 +241,8 @@
     }
 
     h3 {
+      font-family: 'Lora', serif !important;
+
       font-weight: 600;
       color: #2c3e50;
       margin: 0;
@@ -243,6 +250,7 @@
   }
 
   p {
+    margin-left: 1rem !important;
     color: #6B7280;
     margin: 0;
     font-size: 0.875rem;
@@ -257,13 +265,14 @@
   align-items: center;
 
   .total-label {
-    font-size: 0.875rem;
+    font-family: 'Lora', serif !important;
+    font-size: 1rem;
     color: #6B7280;
     margin-bottom: 0.25rem;
   }
 
   .total-amount {
-    font-family: 'Lora', serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     color: #2B6CB0;

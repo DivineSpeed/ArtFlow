@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+.store-management-container {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 25px;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.management-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.management-header mat-form-field {
+    width: 48%;
+}
+
+.table-container {
+    margin-bottom: 0.75rem;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+}
+
+mat-header-row {
+    font-family: 'Lora', serif !important;
+
+    background-color: #f8f9fa;
+}
+
+mat-header-cell {
+    font-family: 'Lora', serif !important;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+mat-row:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+}
+
+mat-cell {
+    font-size: 14px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-details-btn {
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+    transform: scale(1.1);
+    color: #3498db;
+}
+
+.delete-btn {
+    color: #FCA5A5;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+    color: #fa5b5b;
+}
+
+.actions-header {
+    text-align: center !important;
+    position: relative; /* Required for 'left' to work */
+    left: -7px; 
+}
+
+.t-header{
+    font-family: 'Lora', serif !important;
+
+}
+.t-not-header{
+    font-family: 'Source Sans Pro', sans-serif !important;
+
+}
+
+mat-paginator {
+    box-shadow: 0 10px 25px rgba(0.08, 0, 0, 0.08);
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+
+.custom-dialog-container {
+    width: 600px;
+    /* Allow width to adjust dynamically */
+    border-radius: 50%;
+    /* Rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* More prominent shadow */
+    background-color: #ffffff;
+    /* Ensure background color */
+    padding: 20px;
+    /* Add padding for inner content */
+}
+
+.custom-dialog-container .mat-dialog-container {
+    border-radius: inherit;
+    /* Ensure inner container inherits radius */
+    box-shadow: inherit;
+    /* Ensure inner container inherits shadow */
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .management-header {
+        flex-direction: column;
+    }
+
+    .management-header mat-form-field {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
