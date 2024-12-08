@@ -215,3 +215,13 @@ Nos APIs retournent des réponses avec des statuts et des données ou un message
 | 400 | BAD REQUEST |
 | 404 | NOT FOUND |
 | 500 | INTERNAL SERVER ERROR |
+
+### Tester les requêtes
+
+Vous pouvez tester cela avec **Postman** en suivant ces étapes :
+
+1. **Sélectionnez le type de requête** (GET, POST, DELETE, etc.).
+2. **Entrez l'URL** de l'API à tester.
+3. **Ajoutez les paramètres ou le corps** pour les requêtes POST/PUT.
+4. **Envoyez la requête** et vérifiez la réponse dans l'onglet "Response".
+
