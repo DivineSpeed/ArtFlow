@@ -1,8 +1,8 @@
 <app-header></app-header>
-<div class="container-fluid mt-4">
+<div class="container mt-4">
   <h3 class="mb-3 text-primary">Artisan Dashboard</h3>
     <div class="row">
-        <div class="col">
+        <div class="col-md-8">
             <div class="mb-4">
               <h5 class="title">Orders Total Price (Bar Chart)</h5>
                 <div class="card-chart">
@@ -11,7 +11,7 @@
                       baseChart
                       [datasets]="chartData"
                       [labels]="chartLabels"
-                      [type]="'bar'"
+                      [type]="'line'"
                       [options]="chartOptions"
                     ></canvas>
                   </div>
@@ -35,117 +35,119 @@
               </div>
         </div>
     </div>
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h4>Confirmed Commands</h4>
-    </div>
-    <div class="table table-responsive">
-      <div class="col">
-        <div *ngIf="verif != 404; else noCommands">
-          
-              <div *ngIf="verif != 404; else noCommands">
-                <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-                  
-                  <!-- ID Commande Column -->
-                  <ng-container matColumnDef="idCommande">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>ID Commande</mat-header-cell>
-                    <mat-cell *matCellDef="let command">{{ command.idCommande }}</mat-cell>
-                  </ng-container>
-          
-                  <!-- Date Commande Column -->
-                  <ng-container matColumnDef="dateCommande">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Date Commande</mat-header-cell>
-                    <mat-cell *matCellDef="let command">
-                      {{ command.dateCommande | date: 'short' }}
-                    </mat-cell>
-                  </ng-container>
-          
-                  <!-- Prix Total Column -->
-                  <ng-container matColumnDef="prixTotalCommande">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Prix Total</mat-header-cell>
-                    <mat-cell *matCellDef="let command">
-                      {{ command.prixTotalCommande | currency: 'TND' }}
-                    </mat-cell>
-                  </ng-container>
-          
-                  <!-- Adresse Livraison Column -->
-                  <ng-container matColumnDef="adresseLivraison">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Adresse Livraison</mat-header-cell>
-                    <mat-cell *matCellDef="let command">{{ command.adresseLivraison }}</mat-cell>
-                  </ng-container>
-          
-                  <!-- Ville Column -->
-                  <ng-container matColumnDef="ville">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Ville</mat-header-cell>
-                    <mat-cell *matCellDef="let command">{{ command.ville }}</mat-cell>
-                  </ng-container>
-          
-                  <!-- Code Postal Column -->
-                  <ng-container matColumnDef="codePostal">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Code Postal</mat-header-cell>
-                    <mat-cell *matCellDef="let command">{{ command.codePostal }}</mat-cell>
-                  </ng-container>
-          
-                  <!-- Pays Column -->
-                  <ng-container matColumnDef="pays">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Pays</mat-header-cell>
-                    <mat-cell *matCellDef="let command">{{ command.pays }}</mat-cell>
-                  </ng-container>
-          
-                  <!-- Numéro Téléphone Column -->
-                  <ng-container matColumnDef="numeroTelephone">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Numéro Téléphone</mat-header-cell>
-                    <mat-cell *matCellDef="let command">{{ command.numeroTelephone }}</mat-cell>
-                  </ng-container>
-          
-                  <!-- Email Column -->
-                  <ng-container matColumnDef="email" class="email">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
-                    <mat-cell *matCellDef="let command"><a href="mailto:{{ command.email }}">{{ command.email }}</a></mat-cell>
-                  </ng-container>
-          
-                  <!-- Items Column -->
-                  <ng-container matColumnDef="items">
-                    <mat-header-cell *matHeaderCellDef>Items</mat-header-cell>
-                    <mat-cell *matCellDef="let command">
-                      
-                          <div class="ro">
-                            <div class="col">
-                              <ng-container *ngFor="let item of command.panier.items">
-                                <h6 class="title">{{ item.produit.nomProduit }}</h6>
-                                <p class="mb-1">
-                                  <strong>Qty:</strong> {{ item.quantite }}
-                                </p>
-                                <p class="card-text">
-                                  <strong>Price:</strong> {{ item.produit.prix | currency: 'TND' }}
-                                </p>
-
-                          </ng-container>
-                            </div>
-                          </div>
-                    </mat-cell>
-                  </ng-container>
-          
-                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                </mat-table>
-          
-                <mat-paginator [pageSizeOptions]="[3, 10, 25]" showFirstLastButtons></mat-paginator>
-              </div>
-          
-              <ng-template #noCommands>
-                <p class="alert alert-warning text-center">Aucune commande disponible.</p>
-              </ng-template>
-            </div> 
-        <ng-template #noCommands>
-          <p class="alert alert-warning text-center">Aucune commande disponible.</p>
-        </ng-template>
-      </div>
-    </div>
+    
   
 
     
       
     </div>
  
+<div class="container-fluid">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h4>Confirmed Commands</h4>
+  </div>
+  <div class="table table-responsive">
+    <div class="col">
+      <div *ngIf="verif != 404; else noCommands">
+        
+            <div *ngIf="verif != 404; else noCommands">
+              <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                
+                <!-- ID Commande Column -->
+                <ng-container matColumnDef="idCommande">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>ID Commande</mat-header-cell>
+                  <mat-cell *matCellDef="let command">{{ command.idCommande }}</mat-cell>
+                </ng-container>
+        
+                <!-- Date Commande Column -->
+                <ng-container matColumnDef="dateCommande">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Date Commande</mat-header-cell>
+                  <mat-cell *matCellDef="let command">
+                    {{ command.dateCommande | date: 'short' }}
+                  </mat-cell>
+                </ng-container>
+        
+                <!-- Prix Total Column -->
+                <ng-container matColumnDef="prixTotalCommande">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Prix Total</mat-header-cell>
+                  <mat-cell *matCellDef="let command">
+                    {{ command.prixTotalCommande | currency: 'TND' }}
+                  </mat-cell>
+                </ng-container>
+        
+                <!-- Adresse Livraison Column -->
+                <ng-container matColumnDef="adresseLivraison">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Adresse Livraison</mat-header-cell>
+                  <mat-cell *matCellDef="let command">{{ command.adresseLivraison }}</mat-cell>
+                </ng-container>
+        
+                <!-- Ville Column -->
+                <ng-container matColumnDef="ville">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Ville</mat-header-cell>
+                  <mat-cell *matCellDef="let command">{{ command.ville }}</mat-cell>
+                </ng-container>
+        
+                <!-- Code Postal Column -->
+                <ng-container matColumnDef="codePostal">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Code Postal</mat-header-cell>
+                  <mat-cell *matCellDef="let command">{{ command.codePostal }}</mat-cell>
+                </ng-container>
+        
+                <!-- Pays Column -->
+                <ng-container matColumnDef="pays">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Pays</mat-header-cell>
+                  <mat-cell *matCellDef="let command">{{ command.pays }}</mat-cell>
+                </ng-container>
+        
+                <!-- Numéro Téléphone Column -->
+                <ng-container matColumnDef="numeroTelephone">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Numéro Téléphone</mat-header-cell>
+                  <mat-cell *matCellDef="let command">{{ command.numeroTelephone }}</mat-cell>
+                </ng-container>
+        
+                <!-- Email Column -->
+                <ng-container matColumnDef="email" class="email">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                  <mat-cell *matCellDef="let command"><a href="mailto:{{ command.email }}">{{ command.email }}</a></mat-cell>
+                </ng-container>
+        
+                <!-- Items Column -->
+                <ng-container matColumnDef="items">
+                  <mat-header-cell *matHeaderCellDef>Items</mat-header-cell>
+                  <mat-cell *matCellDef="let command">
+                    
+                        <div class="ro">
+                          <div class="col">
+                            <ng-container *ngFor="let item of command.panier.items">
+                              <h6 class="title">{{ item.produit.nomProduit }}</h6>
+                              <p class="mb-1">
+                                <strong>Qty:</strong> {{ item.quantite }}
+                              </p>
+                              <p class="card-text">
+                                <strong>Price:</strong> {{ item.produit.prix | currency: 'TND' }}
+                              </p>
 
+                        </ng-container>
+                          </div>
+                        </div>
+                  </mat-cell>
+                </ng-container>
+        
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+        
+              <mat-paginator [pageSizeOptions]="[3, 10, 25]" showFirstLastButtons></mat-paginator>
+            </div>
+        
+            <ng-template #noCommands>
+              <p class="alert alert-warning text-center">Aucune commande disponible.</p>
+            </ng-template>
+          </div> 
+      <ng-template #noCommands>
+        <p class="alert alert-warning text-center">Aucune commande disponible.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>
