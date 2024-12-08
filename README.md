@@ -135,8 +135,10 @@ spring.datasource.password=mot_de_passe
 
   - `GET /produits/public/products` - Récupérer tous les produits.
   - `GET /produits/getproductbyid/:id` - Récupérer le produit par ID.
+  - `POST /cart/creer` -  Créer un panier par SESSIONID
+  - `GET /cart/getPanier` -  Récupérer son panier par SESSIONID.
   - `POST /cart/ajouter?quantite=:QUANTITE&Idproduit=:IDPROD` - Ajouter un produit au panier.
-  - `DELETE /cart/removeItem?:Idproduit` - Supprimer produit du panier .
+  - `DELETE /cart/removeItem?:Idproduit` -Supprimer un produit du panier par son ID produit.
   - `POST /Commandes/creer` - Créer commande .
     ###### Paramètre JSON Body - Exemple :
     ```json
