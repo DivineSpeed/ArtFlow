@@ -44,12 +44,15 @@ export class DashboardComponent implements OnInit {
   // Bar Chart properties
   chartLabels: string[] = [];
   chartData: any[] = [];
-  chartOptions: ChartOptions<'bar'> = {
+  chartOptions: ChartOptions<'line'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: { display: true },
     },
+    
+    borderColor: 'rgb(75, 192, 192)',
+    
   };
 
   // Pie Chart properties
