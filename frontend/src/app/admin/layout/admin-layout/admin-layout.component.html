@@ -3,8 +3,9 @@
     <!-- Sidebar -->
     <nav class="sidebar">
         <div class="logo-container">
-            <img src="/assets/admin-logo.svg" alt="Admin Logo" class="logo">
+            <img src="assets/img/logo2.png" alt="Admin Logo" class="logo">
         </div>
+      
 
         <ul class="nav-menu">
             <li class="nav-item" *ngFor="let item of navItems">
@@ -27,9 +28,15 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <header class="header">
-            <h1>{{ pageTitle }}</h1>
+        <header class="header d-flex align-items-center justify-content-between">
+            <h1 class="d-flex align-items-center">
+                {{ pageTitle }}
+                <div class="nav-item ml-4" *ngIf="isLoggedIn">
+                    <button class="btn btn-outline-primary" (click)="logout()">Logout</button>
+                </div>
+            </h1>
         </header>
+        
 
         <div class="content-wrapper">
             <router-outlet></router-outlet>

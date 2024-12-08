@@ -37,11 +37,20 @@ export class AdminLayoutComponent implements OnInit {
     },
   ];
   userEmail: string | null = null;
+  logout() {
+        // Clear session storage
+        sessionStorage.clear();
+        // Redirect to home or login page
+        this.router.navigate(['/']);
+  }
 
   constructor(private router: Router) { }
-
+  isLoggedIn = false
   ngOnInit() {
+    const token = sessionStorage.getItem('token');
+    this.isLoggedIn = !!token;
 
+    
     this.userEmail = sessionStorage.getItem('userEmail');
     // Update page title based on current route
     this.router.events

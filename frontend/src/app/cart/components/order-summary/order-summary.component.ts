@@ -22,7 +22,7 @@ export class OrderSummaryComponent implements OnInit {
   constructor(private orderService: OrderService, private EmailService: EmailService) { }
 
   ngOnInit(): void {
-    const orderId = "15" /*this.orderService.getOrderId();*/
+    const orderId = this.orderService.getOrderId();
 
     if (!orderId) {
       this.errorMessage = 'Order ID not found!';

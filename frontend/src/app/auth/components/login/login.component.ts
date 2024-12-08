@@ -61,7 +61,12 @@ export class LoginComponent {
           if (response) {
             console.log("Login successful");
             this._snackBar.open("Login réussi", "Close", { duration: 3000, verticalPosition: 'top' });
-            this.route.navigate(["/artisan/myspace"]);
+            if(response.role=="ARTISAN"){
+              this.route.navigate(["/artisan/myspace"]);
+            }
+            else{
+              this.route.navigate(["/admin/dashboard"]);
+            }
             sessionStorage.setItem('token', response.token);
             sessionStorage.setItem('role', response.role);
             sessionStorage.setItem('userId', response.userId);

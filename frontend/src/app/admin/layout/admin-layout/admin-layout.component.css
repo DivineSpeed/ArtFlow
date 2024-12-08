@@ -10,6 +10,20 @@ body {
     overflow: hidden; /* Prevent body-level scrolling */
     font-family: 'Source Sans Pro', sans-serif;
 }
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 1rem; /* Adjust spacing as needed */
+}
 
 /* Admin Container Layout */
 .admin-container {

@@ -65,15 +65,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.auth.logout().subscribe(
-      (r) => {
-        console.log(r)
+   
         // Clear session storage
         sessionStorage.clear();
         // Redirect to home or login page
         this.router.navigate(['/']);
-      }
-    );
+      
   }
 
   // Method to create a new store

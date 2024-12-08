@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'artisan', loadChildren: () => import('./artisan/artisan.module').then(m => m.ArtisanModule) },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'login', component: LoginComponent },
-  { path: 'create-store', component: RegisterComponent },
+  { path: 'Signin', component: RegisterComponent },
   { path: 'home', component:  HomeComponent},
   { path: 'about', component:  AboutComponent},
   { path: 'cart', component: CartItemComponent },
