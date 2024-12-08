@@ -204,4 +204,14 @@ spring.datasource.password=mot_de_passe
   - `GET /Commandes/getCommandeByIDArtisan/:idArtisan` - Récupérer les commandes par ID Artisan.
 
 
+ ## Status Codes 
 
+Nos APIs retournent des réponses avec des statuts et des données ou un message dans le corps.
+
+| Status Code | Description |
+| :--- | :--- |
+| 200 | OK |
+| 201 | CREATED |
+| 400 | BAD REQUEST |
+| 404 | NOT FOUND |
+| 500 | INTERNAL SERVER ERROR |
