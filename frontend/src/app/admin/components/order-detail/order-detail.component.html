@@ -1,0 +1,84 @@
+<!-- Add this right after your table-container div in order-management.component.html -->
+<div class="side-panel" [class.open]="selectedOrder">
+    <div class="panel-header" *ngIf="selectedOrder">
+        <h2 class="t-header">Order #{{selectedOrder.idCommande}} Details</h2>
+        <button mat-icon-button (click)="closeOrderDetails()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div class="panel-content" *ngIf="selectedOrder">
+        <div class="order-section">
+            <h3 class="t-header">Customer Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Name:</span>
+                    <span>{{selectedOrder.nomVisiteur}} {{selectedOrder.prenomVisiteur}}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Email:</span>
+                    <span>{{selectedOrder.email}}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Phone:</span>
+                    <span>{{selectedOrder.numeroTelephone}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-section">
+            <h3 class="t-header">Shipping Address</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Address:</span>
+                    <span>{{selectedOrder.adresseLivraison}}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">City:</span>
+                    <span>{{selectedOrder.ville}}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Postal Code:</span>
+                    <span>{{selectedOrder.codePostal}}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Country:</span>
+                    <span>{{selectedOrder.pays}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-section">
+            <h3 class="t-header">Order Items</h3>
+            <div class="items-list">
+                <div class="item-card" *ngFor="let item of selectedOrder.panier.items">
+                    <img [src]="item.produit.imageProduit" [alt]="item.produit.nomProduit" class="item-image">
+                    <div class="item-details">
+                        <h4>{{item.produit.nomProduit}}</h4>
+                        <p>Quantity: {{item.quantite}}</p>
+                        <p>Price per unit: {{item.produit.prix | currency}}</p>
+                        <p>Subtotal: {{item.quantite * item.produit.prix | currency}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-section">
+            <h3 class="t-header">Order Summary</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Order Date:</span>
+                    <span>{{formatOrderDate(selectedOrder.dateCommande)}}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Order Status:</span>
+                    <span>{{selectedOrder.orderStatus}}</span>
+                </div>
+                <div class="info-item total">
+                    <span class="label">Total Amount:</span>
+                    <span class="total-amount">{{selectedOrder.prixTotalCommande | currency}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

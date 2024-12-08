@@ -1,4 +1,4 @@
-
+<app-header></app-header>
 <body>
     <!-- Hero Section -->
     <div class="container-fluid p-5 text-center hero-section">
@@ -31,11 +31,11 @@
         <!-- Pagination Controls -->
         <div class="pagination-controls text-center mt-4">
             <button class="btn btn-outline-primary me-2" (click)="prevPage()" [disabled]="currentPage === 1">
-                Previous
+                <i class="fas fa-chevron-left"></i>
             </button>
             <span>Page {{ currentPage }}</span>
             <button class="btn btn-outline-primary ms-2" (click)="nextPage()" [disabled]="!canGoNext()">
-                Next
+                <i class="fas fa-chevron-right"></i>
             </button>
         </div>
     </div>

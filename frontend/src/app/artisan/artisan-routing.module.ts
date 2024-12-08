@@ -7,11 +7,13 @@ import { MyspaceComponent } from './components/myspace/myspace.component';
 
 const routes: Routes = [
   {
-    path:"myspace" , component:MyspaceComponent , canActivate: [authGuard],
+    path: '', canActivate: [authGuard],
+    children: [
+      {path:"myspace" , component:MyspaceComponent , canActivate: [authGuard]},
+      {path:"dashboard" , component:DashboardComponent, canActivate: [authGuard]}
+    ]
   },
-  {
-    path:"dashboard" , component:DashboardComponent, canActivate: [authGuard],
-  }
+  
 ];
 
 @NgModule({
@@ -19,3 +21,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ArtisanRoutingModule { }
+
+

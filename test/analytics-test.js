@@ -1,142 +1,41 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, combineLatest, map } from 'rxjs';
-import { DataService } from '../../visitor/services/data.service';
+const fs = require('fs');
 
-// Interfaces for the data structures
-interface Store {
-  idBoutique: string;
-  dateCreation: string;
-}
-
-interface Product {
-  idProduit: string;
-  nomProduit: string;
-}
-
-interface CartItem {
-  produit: Product;
-  quantite: number;
-}
-
-interface Order {
-  dateCommande: string;
-  prixTotalCommande: number;
-  pays: string;
-  panier: {
-    items: CartItem[];
-  };
-}
-
-interface TimeSeriesData {
-  monthly: Array<{
-    month: string;
-    storesAdded?: number;
-    revenue?: number;
-    orders?: number;
-  }>;
-  quarterly: Array<{
-    quarter: string;
-    storesAdded?: number;
-    revenue?: number;
-    orders?: number;
-  }>;
-  yearly: Array<{
-    year: string;
-    storesAdded?: number;
-    revenue?: number;
-    orders?: number;
-  }>;
-}
-
-interface TopSellingArtwork {
-  artworkId: string;
-  name: string;
-  totalSales: number;
-}
-
-export interface TransformedData {
-  revenueOverTime: TimeSeriesData;
-  ordersOverTime: TimeSeriesData;
-  storesOverTime: TimeSeriesData;
-  totalStores: number;
-  totalOrders: number;
-  totalRevenue: number;
-  topSellingArtworks: TopSellingArtwork[];
-  customerDemographics: { [key: string]: number };
-}
-
-@Injectable({
-  providedIn: 'root'
-})
-export class AdminService {
-  private readonly baseUrl = 'http://localhost:8955';
-
-  constructor(private http: HttpClient, DataService : DataService) { }
-
-  // Fetch stores data
-  getStores(): Observable<Store[]> {
-    return this.http.get<Store[]>(`${this.baseUrl}/boutiques/All`);
-  }
-
-  // Fetch orders data
-  getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(`${this.baseUrl}/Commandes/All`);
-  }
-
-  // Get all analytics data in one call
-  getAnalyticsData(): Observable<TransformedData> {
-    return combineLatest([
-      this.getStores(),
-      this.getOrders()
-    ]).pipe(
-      map(([storesData, ordersData]) => this.transformAPIData(storesData, ordersData))
-    );
-  }
-
-  private getMonth(dateString: string): string {
+class AnalyticsService {
+  getMonth(dateString) {
     const date = new Date(dateString);
     return date.toLocaleString('default', { month: 'long' });
   }
 
-  private getYear(dateString: string): number {
-    return new Date(dateString).getFullYear();
-  }
-
-  private generateTimeSeriesData(
-    data: (string | Order)[],
-    dataType: 'stores' | 'revenue' | 'orders'
-  ): TimeSeriesData {
+  generateTimeSeriesData(data, dataType) {
     // Get the current year
     const currentYear = new Date().getFullYear();
 
-    const monthlyMap = new Map<string, number>();
-    const quarterlyMap = new Map<string, number>();
-    const yearlyMap = new Map<string, number>();
+    const monthlyMap = new Map();
+    const quarterlyMap = new Map();
+    const yearlyMap = new Map();
 
     data.forEach(item => {
-      let date: Date;
-      let month: string;
-      let year: number;
-      let quarter: string;
+      let date;
+      let month;
+      let year;
+      let quarter;
 
       if (dataType === 'stores') {
-        date = new Date(item as string);
-        month = this.getMonth(item as string);
+        date = new Date(item);
+        month = this.getMonth(item);
         year = date.getFullYear();
         quarter = `Q${Math.floor(date.getMonth() / 3) + 1}`;
       } else {
-        const orderItem = item as Order;
-        date = new Date(orderItem.dateCommande);
-        month = this.getMonth(orderItem.dateCommande);
+        date = new Date(item.dateCommande);
+        month = this.getMonth(item.dateCommande);
         year = date.getFullYear();
         quarter = `Q${Math.floor(date.getMonth() / 3) + 1}`;
       }
 
       // Always track total yearly data across all years
       if (dataType === 'revenue') {
-        const orderItem = item as Order;
-        yearlyMap.set(year.toString(), (yearlyMap.get(year.toString()) || 0) + orderItem.prixTotalCommande);
+        const value = dataType === 'stores' ? 1 : item.prixTotalCommande;
+        yearlyMap.set(year.toString(), (yearlyMap.get(year.toString()) || 0) + value);
       } else {
         yearlyMap.set(year.toString(), (yearlyMap.get(year.toString()) || 0) + 1);
       }
@@ -144,9 +43,9 @@ export class AdminService {
       // Only add to monthly and quarterly if it's the current year
       if (year === currentYear) {
         if (dataType === 'revenue') {
-          const orderItem = item as Order;
-          monthlyMap.set(month, (monthlyMap.get(month) || 0) + orderItem.prixTotalCommande);
-          quarterlyMap.set(quarter, (quarterlyMap.get(quarter) || 0) + orderItem.prixTotalCommande);
+          const value = item.prixTotalCommande;
+          monthlyMap.set(month, (monthlyMap.get(month) || 0) + value);
+          quarterlyMap.set(quarter, (quarterlyMap.get(quarter) || 0) + value);
         } else {
           monthlyMap.set(month, (monthlyMap.get(month) || 0) + 1);
           quarterlyMap.set(quarter, (quarterlyMap.get(quarter) || 0) + 1);
@@ -180,7 +79,7 @@ export class AdminService {
     return { monthly: monthlyData, quarterly: quarterlyData, yearly: yearlyData };
   }
 
-  transformAPIData(storesData: Store[], ordersData: Order[]): TransformedData {
+  transformAPIData(storesData, ordersData) {
     // Process stores data
     const storesCreationDates = storesData.map(store => store.dateCreation);
     const uniqueStores = [...new Set(storesData.map(store => store.idBoutique))];
@@ -189,7 +88,7 @@ export class AdminService {
     const totalRevenue = ordersData.reduce((sum, order) => sum + order.prixTotalCommande, 0);
 
     // Top selling artworks
-    const topSellingArtworks = ordersData.reduce<TopSellingArtwork[]>((acc, order) => {
+    const topSellingArtworks = ordersData.reduce((acc, order) => {
       order.panier.items.forEach(item => {
         const existingArtwork = acc.find(a => a.artworkId === item.produit.idProduit.toString());
         if (existingArtwork) {
@@ -208,7 +107,7 @@ export class AdminService {
       .slice(0, 10);
 
     // Calculate customer demographics
-    const customerDemographics = ordersData.reduce<{ [key: string]: number }>((acc, order) => {
+    const customerDemographics = ordersData.reduce((acc, order) => {
       const country = order.pays;
       acc[country] = (acc[country] || 0) + 1;
       return acc;
@@ -226,3 +125,25 @@ export class AdminService {
     };
   }
 }
+
+// Example usage
+function main() {
+  // Read the JSON files
+  const storesData = JSON.parse(fs.readFileSync('stores.json', 'utf8'));
+  const ordersData = JSON.parse(fs.readFileSync('orders.json', 'utf8'));
+
+  // Create an instance of the AnalyticsService
+  const analyticsService = new AnalyticsService();
+
+  // Transform the data
+  const transformedData = analyticsService.transformAPIData(storesData, ordersData);
+
+  // Pretty print the results
+  console.log(JSON.stringify(transformedData, null, 2));
+
+  // Optionally, write to a file
+  fs.writeFileSync('transformed_analytics.json', JSON.stringify(transformedData, null, 2));
+}
+
+// Run the main function
+main();

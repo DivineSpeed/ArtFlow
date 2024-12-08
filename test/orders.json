@@ -1,0 +1,914 @@
+[
+    {
+        "idCommande": 1,
+        "panier": {
+            "idPanier": 2,
+            "sessionId": "18A6BE7944CB9D319CF0C093853EE6B5",
+            "dateCreation": "2024-12-01T12:31:49",
+            "items": [
+                {
+                    "idPanierItem": 62,
+                    "produit": {
+                        "idProduit": 18,
+                        "nomProduit": "Le Jardin Secret",
+                        "descriptionProduit": "Tableau représentant un jardin luxuriant et coloré, dimensions 100x80 cm.",
+                        "prix": 95.00,
+                        "quantiteEnStock": 7,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 1
+                }
+            ]
+        },
+        "dateCommande": "2024-12-06T12:20:30.000+00:00",
+        "prixTotalCommande": 95.00,
+        "adresseLivraison": "12 Rue de la Liberté",
+        "ville": "Sfax",
+        "codePostal": "3000",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2169732168",
+        "email": "sara.benali@example.com",
+        "nomVisiteur": "Sara",
+        "prenomVisiteur": "Ben Ali"
+    },
+    {
+        "idCommande": 2,
+        "panier": {
+            "idPanier": 3,
+            "sessionId": "5975F0F7945791BF6EF2F731671A228C",
+            "dateCreation": "2024-12-01T13:29:24",
+            "items": [
+                {
+                    "idPanierItem": 63,
+                    "produit": {
+                        "idProduit": 19,
+                        "nomProduit": "Vase Moderne en Verre",
+                        "descriptionProduit": "Vase en verre soufflé à la main, design moderne, hauteur 30 cm.",
+                        "prix": 45.00,
+                        "quantiteEnStock": 8,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 18,
+                            "nomBoutique": "CréaDesign",
+                            "description": "Objets décoratifs et sculptures modernes.",
+                            "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+                            "facebookLink": "https://facebook.com/creadesign",
+                            "instagramLink": "https://instagram.com/creadesign",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 8,
+                                "nomArtisan": "Dupont",
+                                "prenomArtisan": "Marie",
+                                "numTelephone": "0601020304",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 3
+                }
+            ]
+        },
+        "dateCommande": "2024-12-06T14:10:45.000+00:00",
+        "prixTotalCommande": 135.00,
+        "adresseLivraison": "6 Rue de Carthage",
+        "ville": "Nabeul",
+        "codePostal": "8000",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2165654568",
+        "email": "mariam.hassan@example.com",
+        "nomVisiteur": "Mariam",
+        "prenomVisiteur": "Hassan"
+    },
+    {
+        "idCommande": 3,
+        "panier": {
+            "idPanier": 5,
+            "sessionId": "002A63063B0DAF2805DE4E682FDFFE64",
+            "dateCreation": "2024-12-01T17:13:31",
+            "items": [
+                {
+                    "idPanierItem": 64,
+                    "produit": {
+                        "idProduit": 27,
+                        "nomProduit": "Le Voyageur",
+                        "descriptionProduit": "Tableau représentant un voyageur sur une route déserte, avec un horizon infini, dimensions 130x100 cm.",
+                        "prix": 220.00,
+                        "quantiteEnStock": -1,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 26,
+                            "nomBoutique": "Peintures Abstraites",
+                            "description": "Une collection d'œuvres abstraites uniques.",
+                            "adresseBoutique": "5 Rue des Beaux Arts, Tunis",
+                            "facebookLink": "https://facebook.com/peinturesAbstraites",
+                            "instagramLink": "https://instagram.com/peinturesAbstraites",
+                            "dateCreation": "2024-12-07T10:44:01.000+00:00",
+                            "artisan": {
+                                "idArtisan": 13,
+                                "nomArtisan": "Ayadi",
+                                "prenomArtisan": "Sami",
+                                "numTelephone": "21696321547",
+                                "compte": {
+                                    "idCompte": 4,
+                                    "email": "abstrait@example.com",
+                                    "motDePasse": "hashedPassword1",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-12-07T11:34:55"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 5
+                }
+            ]
+        },
+        "dateCommande": "2021-12-08T16:00:30.000+00:00",
+        "prixTotalCommande": 1100.00,
+        "adresseLivraison": "12 Rue Mohamed V",
+        "ville": "Tunis",
+        "codePostal": "1008",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2165256789",
+        "email": "sabrina.abidi@example.com",
+        "nomVisiteur": "Sabrina",
+        "prenomVisiteur": "Abidi"
+    },
+    {
+        "idCommande": 4,
+        "panier": {
+            "idPanier": 6,
+            "sessionId": "B05D6FBDBC89A42BCD2D145AF294F2A0",
+            "dateCreation": "2024-12-01T17:54:53",
+            "items": [
+                {
+                    "idPanierItem": 65,
+                    "produit": {
+                        "idProduit": 17,
+                        "nomProduit": "Coucher de Soleil sur la Mer",
+                        "descriptionProduit": "Peinture représentant un coucher de soleil vibrant sur la mer, dimensions 90x70 cm.",
+                        "prix": 120.00,
+                        "quantiteEnStock": 0,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 4
+                }
+            ]
+        },
+        "dateCommande": "2024-01-08T17:50:25.000+00:00",
+        "prixTotalCommande": 480.00,
+        "adresseLivraison": "30 Avenue de Carthage",
+        "ville": "Tunis",
+        "codePostal": "1009",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2165981234",
+        "email": "rania.benkirane@example.com",
+        "nomVisiteur": "Rania",
+        "prenomVisiteur": "Benkirane"
+    },
+    {
+        "idCommande": 5,
+        "panier": {
+            "idPanier": 8,
+            "sessionId": "1338FD904B7CF624C71BC307219837F1",
+            "dateCreation": "2024-12-01T18:24:31",
+            "items": [
+                {
+                    "idPanierItem": 67,
+                    "produit": {
+                        "idProduit": 19,
+                        "nomProduit": "Vase Moderne en Verre",
+                        "descriptionProduit": "Vase en verre soufflé à la main, design moderne, hauteur 30 cm.",
+                        "prix": 45.00,
+                        "quantiteEnStock": 8,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 18,
+                            "nomBoutique": "CréaDesign",
+                            "description": "Objets décoratifs et sculptures modernes.",
+                            "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+                            "facebookLink": "https://facebook.com/creadesign",
+                            "instagramLink": "https://instagram.com/creadesign",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 8,
+                                "nomArtisan": "Dupont",
+                                "prenomArtisan": "Marie",
+                                "numTelephone": "0601020304",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 3
+                }
+            ]
+        },
+        "dateCommande": "2024-08-08T18:40:00.000+00:00",
+        "prixTotalCommande": 135.00,
+        "adresseLivraison": "13 Rue de la Paix",
+        "ville": "Tunis",
+        "codePostal": "1010",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2165649873",
+        "email": "yassine.fares@example.com",
+        "nomVisiteur": "Yassine",
+        "prenomVisiteur": "Fares"
+    },
+    {
+        "idCommande": 6,
+        "panier": {
+            "idPanier": 12,
+            "sessionId": "503AD6FAA65EAE221F3E8F949082073C",
+            "dateCreation": "2024-12-05T16:17:21",
+            "items": [
+                {
+                    "idPanierItem": 71,
+                    "produit": {
+                        "idProduit": 18,
+                        "nomProduit": "Le Jardin Secret",
+                        "descriptionProduit": "Tableau représentant un jardin luxuriant et coloré, dimensions 100x80 cm.",
+                        "prix": 95.00,
+                        "quantiteEnStock": 7,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 4
+                }
+            ]
+        },
+        "dateCommande": "2023-12-08T10:15:55.000+00:00",
+        "prixTotalCommande": 380.00,
+        "adresseLivraison": "90 Avenue Habib Bourguiba",
+        "ville": "Tunis",
+        "codePostal": "1006",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2165689087",
+        "email": "amani.melliti@example.com",
+        "nomVisiteur": "Amani",
+        "prenomVisiteur": "Melliti"
+    },
+    {
+        "idCommande": 7,
+        "panier": {
+            "idPanier": 13,
+            "sessionId": "8DE32E88FC961897F18786A8F4FFD3C3",
+            "dateCreation": "2024-12-05T16:22:09",
+            "items": [
+                {
+                    "idPanierItem": 72,
+                    "produit": {
+                        "idProduit": 19,
+                        "nomProduit": "Vase Moderne en Verre",
+                        "descriptionProduit": "Vase en verre soufflé à la main, design moderne, hauteur 30 cm.",
+                        "prix": 45.00,
+                        "quantiteEnStock": 8,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 18,
+                            "nomBoutique": "CréaDesign",
+                            "description": "Objets décoratifs et sculptures modernes.",
+                            "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+                            "facebookLink": "https://facebook.com/creadesign",
+                            "instagramLink": "https://instagram.com/creadesign",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 8,
+                                "nomArtisan": "Dupont",
+                                "prenomArtisan": "Marie",
+                                "numTelephone": "0601020304",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 3
+                }
+            ]
+        },
+        "dateCommande": "2024-12-08T09:50:20.000+00:00",
+        "prixTotalCommande": 135.00,
+        "adresseLivraison": "56 Rue des Jasmins",
+        "ville": "Tunis",
+        "codePostal": "1005",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2162345678",
+        "email": "khaled.salah@example.com",
+        "nomVisiteur": "Khaled",
+        "prenomVisiteur": "Salah"
+    },
+    {
+        "idCommande": 8,
+        "panier": {
+            "idPanier": 14,
+            "sessionId": "7198F44C2FFA18A605BC1AFE6E70865C",
+            "dateCreation": "2024-12-05T16:30:25",
+            "items": [
+                {
+                    "idPanierItem": 73,
+                    "produit": {
+                        "idProduit": 26,
+                        "nomProduit": "Lighthouse View",
+                        "descriptionProduit": "Peinture d'un phare surplombant l'océan lors du coucher du soleil, dimensions 110x90 cm.",
+                        "prix": 180.00,
+                        "quantiteEnStock": 5,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 26,
+                            "nomBoutique": "Peintures Abstraites",
+                            "description": "Une collection d'œuvres abstraites uniques.",
+                            "adresseBoutique": "5 Rue des Beaux Arts, Tunis",
+                            "facebookLink": "https://facebook.com/peinturesAbstraites",
+                            "instagramLink": "https://instagram.com/peinturesAbstraites",
+                            "dateCreation": "2024-12-07T10:44:01.000+00:00",
+                            "artisan": {
+                                "idArtisan": 13,
+                                "nomArtisan": "Ayadi",
+                                "prenomArtisan": "Sami",
+                                "numTelephone": "21696321547",
+                                "compte": {
+                                    "idCompte": 4,
+                                    "email": "abstrait@example.com",
+                                    "motDePasse": "hashedPassword1",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-12-07T11:34:55"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 1
+                }
+            ]
+        },
+        "dateCommande": "2020-12-08T18:40:00.000+00:00",
+        "prixTotalCommande": 180.00,
+        "adresseLivraison": "13 Rue de la Paix",
+        "ville": "Tunis",
+        "codePostal": "1010",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2165649873",
+        "email": "yassine.fares@example.com",
+        "nomVisiteur": "Yassine",
+        "prenomVisiteur": "Fares"
+    },
+    {
+        "idCommande": 9,
+        "panier": {
+            "idPanier": 16,
+            "sessionId": "4892D105438FF1282FC2AC92CAE3E894",
+            "dateCreation": "2024-12-05T16:39:44",
+            "items": [
+                {
+                    "idPanierItem": 75,
+                    "produit": {
+                        "idProduit": 17,
+                        "nomProduit": "Coucher de Soleil sur la Mer",
+                        "descriptionProduit": "Peinture représentant un coucher de soleil vibrant sur la mer, dimensions 90x70 cm.",
+                        "prix": 120.00,
+                        "quantiteEnStock": 0,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 2
+                }
+            ]
+        },
+        "dateCommande": "2024-12-09T15:25:00.000+00:00",
+        "prixTotalCommande": 240.00,
+        "adresseLivraison": "10 Avenue Habib Bourguiba",
+        "ville": "Tunis",
+        "codePostal": "1001",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2167456789",
+        "email": "leila.bourguiba@example.com",
+        "nomVisiteur": "Leila",
+        "prenomVisiteur": "Bourguiba"
+    },
+    {
+        "idCommande": 10,
+        "panier": {
+            "idPanier": 17,
+            "sessionId": "28E028289F6C916D22BB6FE8058E2A2C",
+            "dateCreation": "2024-12-05T16:51:52",
+            "items": [
+                {
+                    "idPanierItem": 76,
+                    "produit": {
+                        "idProduit": 18,
+                        "nomProduit": "Le Jardin Secret",
+                        "descriptionProduit": "Tableau représentant un jardin luxuriant et coloré, dimensions 100x80 cm.",
+                        "prix": 95.00,
+                        "quantiteEnStock": 7,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 1
+                }
+            ]
+        },
+        "dateCommande": "2023-05-02T16:50:00.000+00:00",
+        "prixTotalCommande": 95.00,
+        "adresseLivraison": "15 Rue de la Poste",
+        "ville": "Nabeul",
+        "codePostal": "8000",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2167534123",
+        "email": "amine.bouslama@example.com",
+        "nomVisiteur": "Amine",
+        "prenomVisiteur": "Bouslama"
+    },
+    {
+        "idCommande": 11,
+        "panier": {
+            "idPanier": 18,
+            "sessionId": "05E0FDD7C7BBB751558604E6760B4D65",
+            "dateCreation": "2024-12-05T17:04:16",
+            "items": [
+                {
+                    "idPanierItem": 77,
+                    "produit": {
+                        "idProduit": 19,
+                        "nomProduit": "Vase Moderne en Verre",
+                        "descriptionProduit": "Vase en verre soufflé à la main, design moderne, hauteur 30 cm.",
+                        "prix": 45.00,
+                        "quantiteEnStock": 8,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 18,
+                            "nomBoutique": "CréaDesign",
+                            "description": "Objets décoratifs et sculptures modernes.",
+                            "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+                            "facebookLink": "https://facebook.com/creadesign",
+                            "instagramLink": "https://instagram.com/creadesign",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 8,
+                                "nomArtisan": "Dupont",
+                                "prenomArtisan": "Marie",
+                                "numTelephone": "0601020304",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 3
+                }
+            ]
+        },
+        "dateCommande": "2024-05-01T13:05:00.000+00:00",
+        "prixTotalCommande": 135.00,
+        "adresseLivraison": "18 Rue du Général",
+        "ville": "Gafsa",
+        "codePostal": "2100",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2163216548",
+        "email": "imane.khadhri@example.com",
+        "nomVisiteur": "Imane",
+        "prenomVisiteur": "Khadhri"
+    },
+    {
+        "idCommande": 12,
+        "panier": {
+            "idPanier": 19,
+            "sessionId": "89EC163FA4E0C70015EE936A2620F7DA",
+            "dateCreation": "2024-12-05T17:05:25",
+            "items": [
+                {
+                    "idPanierItem": 78,
+                    "produit": {
+                        "idProduit": 26,
+                        "nomProduit": "Lighthouse View",
+                        "descriptionProduit": "Peinture d'un phare surplombant l'océan lors du coucher du soleil, dimensions 110x90 cm.",
+                        "prix": 180.00,
+                        "quantiteEnStock": 5,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 26,
+                            "nomBoutique": "Peintures Abstraites",
+                            "description": "Une collection d'œuvres abstraites uniques.",
+                            "adresseBoutique": "5 Rue des Beaux Arts, Tunis",
+                            "facebookLink": "https://facebook.com/peinturesAbstraites",
+                            "instagramLink": "https://instagram.com/peinturesAbstraites",
+                            "dateCreation": "2024-12-07T10:44:01.000+00:00",
+                            "artisan": {
+                                "idArtisan": 13,
+                                "nomArtisan": "Ayadi",
+                                "prenomArtisan": "Sami",
+                                "numTelephone": "21696321547",
+                                "compte": {
+                                    "idCompte": 4,
+                                    "email": "abstrait@example.com",
+                                    "motDePasse": "hashedPassword1",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-12-07T11:34:55"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 2
+                }
+            ]
+        },
+        "dateCommande": "2020-03-10T19:40:00.000+00:00",
+        "prixTotalCommande": 360.00,
+        "adresseLivraison": "22 Avenue de l'Indépendance",
+        "ville": "Tunis",
+        "codePostal": "1040",
+        "pays": "Tunisie",
+        "numeroTelephone": "+2163456789",
+        "email": "moez.sassi@example.com",
+        "nomVisiteur": "Moez",
+        "prenomVisiteur": "Sassi"
+    },
+    {
+        "idCommande": 13,
+        "panier": {
+            "idPanier": 24,
+            "sessionId": "7BB69CE0B779E676E163F5467C7AD07E",
+            "dateCreation": "2024-12-07T14:18:51",
+            "items": [
+                {
+                    "idPanierItem": 80,
+                    "produit": {
+                        "idProduit": 1,
+                        "nomProduit": "Peinture Abstraite 1",
+                        "descriptionProduit": "Peinture abstraite sur toile, dimensions 100x100 cm.",
+                        "prix": 250.00,
+                        "quantiteEnStock": 7,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 3
+                },
+                {
+                    "idPanierItem": 81,
+                    "produit": {
+                        "idProduit": 3,
+                        "nomProduit": "Peinture Abstraite 3",
+                        "descriptionProduit": "Peinture abstraite minimaliste, dimensions 120x80 cm.",
+                        "prix": 300.00,
+                        "quantiteEnStock": 0,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 3
+                },
+                {
+                    "idPanierItem": 82,
+                    "produit": {
+                        "idProduit": 4,
+                        "nomProduit": "Sculpture Moderne 1",
+                        "descriptionProduit": "Sculpture moderne en métal, forme géométrique, hauteur 50 cm.",
+                        "prix": 45.00,
+                        "quantiteEnStock": 13,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 18,
+                            "nomBoutique": "CréaDesign",
+                            "description": "Objets décoratifs et sculptures modernes.",
+                            "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+                            "facebookLink": "https://facebook.com/creadesign",
+                            "instagramLink": "https://instagram.com/creadesign",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 8,
+                                "nomArtisan": "Dupont",
+                                "prenomArtisan": "Marie",
+                                "numTelephone": "0601020304",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 1
+                }
+            ]
+        },
+        "dateCommande": "2021-06-07T13:37:13.649+00:00",
+        "prixTotalCommande": 1695.00,
+        "adresseLivraison": "ddd ff z",
+        "ville": "dzdzd ",
+        "codePostal": "2456",
+        "pays": "Aruba",
+        "numeroTelephone": "+6522516125",
+        "email": "dd@dz.gg",
+        "nomVisiteur": "DZD",
+        "prenomVisiteur": "MM"
+    },
+    {
+        "idCommande": 14,
+        "panier": {
+            "idPanier": 26,
+            "sessionId": "F27CB97D0447B00D29041E23F3E22748",
+            "dateCreation": "2024-12-07T15:29:36",
+            "items": [
+                {
+                    "idPanierItem": 83,
+                    "produit": {
+                        "idProduit": 2,
+                        "nomProduit": "Peinture Abstraite 2",
+                        "descriptionProduit": "Peinture abstraite, éclatante de couleurs vives, dimensions 80x80 cm.",
+                        "prix": 150.00,
+                        "quantiteEnStock": 3,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 1
+                },
+                {
+                    "idPanierItem": 84,
+                    "produit": {
+                        "idProduit": 4,
+                        "nomProduit": "Sculpture Moderne 1",
+                        "descriptionProduit": "Sculpture moderne en métal, forme géométrique, hauteur 50 cm.",
+                        "prix": 45.00,
+                        "quantiteEnStock": 13,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 18,
+                            "nomBoutique": "CréaDesign",
+                            "description": "Objets décoratifs et sculptures modernes.",
+                            "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+                            "facebookLink": "https://facebook.com/creadesign",
+                            "instagramLink": "https://instagram.com/creadesign",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 8,
+                                "nomArtisan": "Dupont",
+                                "prenomArtisan": "Marie",
+                                "numTelephone": "0601020304",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 1
+                }
+            ]
+        },
+        "dateCommande": "2023-02-07T14:30:13.775+00:00",
+        "prixTotalCommande": 195.00,
+        "adresseLivraison": "dzdzdzfefef",
+        "ville": "hrgrfgef",
+        "codePostal": "5478",
+        "pays": "Belize",
+        "numeroTelephone": "+8575757577",
+        "email": "chbinoumed06@gmail.com",
+        "nomVisiteur": "dzd",
+        "prenomVisiteur": "AA"
+    },
+    {
+        "idCommande": 15,
+        "panier": {
+            "idPanier": 27,
+            "sessionId": "E5385E9CB6783B0495BA612E2B6A4DD6",
+            "dateCreation": "2024-12-07T15:50:32",
+            "items": [
+                {
+                    "idPanierItem": 85,
+                    "produit": {
+                        "idProduit": 2,
+                        "nomProduit": "Peinture Abstraite 2",
+                        "descriptionProduit": "Peinture abstraite, éclatante de couleurs vives, dimensions 80x80 cm.",
+                        "prix": 150.00,
+                        "quantiteEnStock": 3,
+                        "imageProduit": "https://i.etsystatic.com/19663062/r/il/25f15d/3673875542/il_794xN.3673875542_q382.jpg",
+                        "boutique": {
+                            "idBoutique": 17,
+                            "nomBoutique": "Atelier Lumière",
+                            "description": "Boutique spécialisée dans les peintures abstraites.",
+                            "adresseBoutique": "12 Rue des Arts, Paris",
+                            "facebookLink": "https://facebook.com/atelierlumiere",
+                            "instagramLink": "https://instagram.com/atelierlumiere",
+                            "dateCreation": "2024-12-01T12:21:28.000+00:00",
+                            "artisan": {
+                                "idArtisan": 6,
+                                "nomArtisan": "Martin",
+                                "prenomArtisan": "Sophie",
+                                "numTelephone": "0987654321",
+                                "compte": {
+                                    "idCompte": 2,
+                                    "email": "artisan1@example.com",
+                                    "motDePasse": "artisanpass123",
+                                    "role": "ARTISAN",
+                                    "dateCreation": "2024-11-28T09:55:57"
+                                }
+                            }
+                        }
+                    },
+                    "quantite": 1
+                }
+            ]
+        },
+        "dateCommande": "2022-12-07T14:50:54.920+00:00",
+        "prixTotalCommande": 150.00,
+        "adresseLivraison": "efefzfzef",
+        "ville": "ezfezfez",
+        "codePostal": "7575",
+        "pays": "Barbados",
+        "numeroTelephone": "724687575",
+        "email": "chbinoumed06@gmail.com",
+        "nomVisiteur": "",
+        "prenomVisiteur": "fef"
+    }
+]

@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ProductDetailComponent } from '../../../products/components/product-detail/product-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from '../../services/data.service';
-import { CartService } from '../../../cart/services/cart.service'; // Import CartService
+import { CartService } from '../../../cart/services/cart.service';
+import { HeaderComponent } from "../../../layout/components/header/header.component"; // Import CartService
 
 @Component({
   selector: 'app-visitor',
   standalone: true,
-  imports: [CommonModule, ProductDetailComponent, HttpClientModule],
+  imports: [CommonModule, ProductDetailComponent, HttpClientModule, HeaderComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -45,7 +46,7 @@ export class HomeComponent implements OnInit {
   loadProducts(): void {
     this.productService.getProducts(this.currentPage, this.pageSize).subscribe((result) => {
       this.products = result.products;
-      this.totalProducts = result.total;
+      this.totalProducts = result.total;      
     });
   }
 

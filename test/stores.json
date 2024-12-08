@@ -1,0 +1,156 @@
+[
+    {
+        "idBoutique": 17,
+        "nomBoutique": "Atelier Lumière",
+        "description": "Boutique spécialisée dans les peintures abstraites.",
+        "adresseBoutique": "12 Rue des Arts, Paris",
+        "facebookLink": "https://facebook.com/atelierlumiere",
+        "instagramLink": "https://instagram.com/atelierlumiere",
+        "dateCreation": "2023-12-01T12:21:28.000+00:00",
+        "artisan": {
+            "idArtisan": 6,
+            "nomArtisan": "Martin",
+            "prenomArtisan": "Sophie",
+            "numTelephone": "0987654321",
+            "compte": {
+                "idCompte": 2,
+                "email": "artisan1@example.com",
+                "motDePasse": "artisanpass123",
+                "role": "ARTISAN",
+                "dateCreation": "2024-11-28T09:55:57"
+            }
+        }
+    },
+    {
+        "idBoutique": 18,
+        "nomBoutique": "CréaDesign",
+        "description": "Objets décoratifs et sculptures modernes.",
+        "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+        "facebookLink": "https://facebook.com/creadesign",
+        "instagramLink": "https://instagram.com/creadesign",
+        "dateCreation": "2023-12-01T12:21:28.000+00:00",
+        "artisan": {
+            "idArtisan": 8,
+            "nomArtisan": "Dupont",
+            "prenomArtisan": "Marie",
+            "numTelephone": "0601020304",
+            "compte": {
+                "idCompte": 2,
+                "email": "artisan1@example.com",
+                "motDePasse": "artisanpass123",
+                "role": "ARTISAN",
+                "dateCreation": "2024-11-28T09:55:57"
+            }
+        }
+    },
+    {
+        "idBoutique": 19,
+        "nomBoutique": "Atelier Lumière",
+        "description": "Boutique spécialisée dans les peintures abstraites.",
+        "adresseBoutique": "12 Rue des Arts, Paris",
+        "facebookLink": "https://facebook.com/atelierlumiere",
+        "instagramLink": "https://instagram.com/atelierlumiere",
+        "dateCreation": "2023-12-01T12:23:30.000+00:00",
+        "artisan": {
+            "idArtisan": 6,
+            "nomArtisan": "Martin",
+            "prenomArtisan": "Sophie",
+            "numTelephone": "0987654321",
+            "compte": {
+                "idCompte": 2,
+                "email": "artisan1@example.com",
+                "motDePasse": "artisanpass123",
+                "role": "ARTISAN",
+                "dateCreation": "2024-11-28T09:55:57"
+            }
+        }
+    },
+    {
+        "idBoutique": 20,
+        "nomBoutique": "CréaDesign",
+        "description": "Objets décoratifs et sculptures modernes.",
+        "adresseBoutique": "34 Avenue des Créateurs, Lyon",
+        "facebookLink": "https://facebook.com/creadesign",
+        "instagramLink": "https://instagram.com/creadesign",
+        "dateCreation": "2024-12-01T12:23:30.000+00:00",
+        "artisan": {
+            "idArtisan": 8,
+            "nomArtisan": "Dupont",
+            "prenomArtisan": "Marie",
+            "numTelephone": "0601020304",
+            "compte": {
+                "idCompte": 2,
+                "email": "artisan1@example.com",
+                "motDePasse": "artisanpass123",
+                "role": "ARTISAN",
+                "dateCreation": "2024-11-28T09:55:57"
+            }
+        }
+    },
+    {
+        "idBoutique": 26,
+        "nomBoutique": "Peintures Abstraites",
+        "description": "Une collection d'œuvres abstraites uniques.",
+        "adresseBoutique": "5 Rue des Beaux Arts, Tunis",
+        "facebookLink": "https://facebook.com/peinturesAbstraites",
+        "instagramLink": "https://instagram.com/peinturesAbstraites",
+        "dateCreation": "2024-12-07T10:44:01.000+00:00",
+        "artisan": {
+            "idArtisan": 13,
+            "nomArtisan": "Ayadi",
+            "prenomArtisan": "Sami",
+            "numTelephone": "21696321547",
+            "compte": {
+                "idCompte": 4,
+                "email": "abstrait@example.com",
+                "motDePasse": "hashedPassword1",
+                "role": "ARTISAN",
+                "dateCreation": "2024-12-07T11:34:55"
+            }
+        }
+    },
+    {
+        "idBoutique": 27,
+        "nomBoutique": "Bijoux Artisanaux",
+        "description": "Bijoux faits à la main pour toutes les occasions.",
+        "adresseBoutique": "12 Avenue de la Mode, Sfax",
+        "facebookLink": "https://facebook.com/bijouxArtisanaux",
+        "instagramLink": "https://instagram.com/bijouxArtisanaux",
+        "dateCreation": "2024-12-07T10:44:01.000+00:00",
+        "artisan": {
+            "idArtisan": 14,
+            "nomArtisan": "Gharbi",
+            "prenomArtisan": "Lamia",
+            "numTelephone": "21695123478",
+            "compte": {
+                "idCompte": 5,
+                "email": "bijouxArtisanaux@example.com",
+                "motDePasse": "hashedPassword2",
+                "role": "ARTISAN",
+                "dateCreation": "2024-12-07T11:34:55"
+            }
+        }
+    },
+    {
+        "idBoutique": 28,
+        "nomBoutique": "ddddd",
+        "description": "ddddd",
+        "adresseBoutique": "ddddd",
+        "facebookLink": "",
+        "instagramLink": "ddddd",
+        "dateCreation": "2024-12-07T13:24:42.000+00:00",
+        "artisan": {
+            "idArtisan": 15,
+            "nomArtisan": "fffff",
+            "prenomArtisan": "ffffff",
+            "numTelephone": "55555255555",
+            "compte": {
+                "idCompte": 9,
+                "email": "dd@dd.dd",
+                "motDePasse": "$2a$10$gYlN3/4uJIfh6DPHspvF2eZzwrE2DoHg9CSes28zW/o.J1ehCHX0W",
+                "role": "ARTISAN",
+                "dateCreation": "2024-12-07T14:24:42"
+            }
+        }
+    }
+]

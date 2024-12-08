@@ -146,7 +146,6 @@ h2 {
 }
 
 h2.text-center {
-    font-family: var(--font-heading);
     font-size: 2.3rem;
     font-weight: 600;
     color: #2c3e50;
@@ -222,22 +221,34 @@ h2.text-center {
 }
 
 .pagination-controls button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    border-radius: 25px;
-    background-color: #007bff;
-    color: white;
-    transition: all 0.3s ease;
-    min-width: 120px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+    /* Add this */
+    z-index: 2;
+    /* Add this */
+
+
+    &:hover {
+        background-color: #F9FAFB;
+    }
+
+    i {
+        color: #4B5563;
+    }
 }
 
-.pagination-controls button:disabled {
-    background-color: #9acbff;
-    cursor: not-allowed;
-}
 
 .pagination-controls button:hover:not(:disabled) {
-    background-color: #0056b3;
+    background-color: #F9FAFB;
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
