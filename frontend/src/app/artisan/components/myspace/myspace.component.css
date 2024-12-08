@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+* h5 h3 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 .delete-btn {
     background-color: #ffdeda; /* Bright red for delete */
     color: #000000;
@@ -11,6 +18,10 @@
     font-size: 1em;
     color: #333;
     margin: 10px 0;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
 .custom-btn, .delete-btn {
@@ -51,15 +62,22 @@
     font-weight: bold;
     font-size: 1.3em;
     color: #333333;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
 
 
 .body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  
     background-color: #f3f4f6;
     padding-bottom: 50px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
 .profile-info-card {
@@ -70,6 +88,10 @@
     padding: 20px;
     background-color: #ffffff;
     font-size: 1.2em;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
 .profile-info-card .img {
@@ -122,6 +144,10 @@
     transition: all 0.3s ease;
     border-radius: 8px;
     width: 95%;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 

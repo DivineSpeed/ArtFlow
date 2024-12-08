@@ -4,16 +4,19 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { OrderManagementComponent } from './components/order-management/order-management.component';
 import { StoreManagementComponent } from './components/store-management/store-management.component';
-import { authGuard } from '../guards/auth.guard';
+
+import { roleGuard } from '../guards/role.guard';
+import { authGuard } from '../core/guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: '', /*canActivate: [authGuard],*/
+    path: '', canActivate: [authGuard],
     component: AdminLayoutComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent, /*canActivate: [authGuard]*/ },
-      { path: 'orders', component: OrderManagementComponent, /*canActivate: [authGuard]*/ },
-      { path: 'stores', component: StoreManagementComponent, /*canActivate: [authGuard]*/ },
+
+      { path: 'dashboard', component: DashboardComponent ,  canActivate: [roleGuard] },
+      { path: 'orders', component: OrderManagementComponent ,canActivate: [roleGuard]},
+      { path: 'stores', component: StoreManagementComponent ,canActivate: [roleGuard]},
     ],
   },
 ];
